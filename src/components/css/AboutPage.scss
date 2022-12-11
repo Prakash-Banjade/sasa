@@ -1,0 +1,25 @@
+.heroSection{
+    min-height: 500px;
+    background: linear-gradient(
+        to top right,
+        rgb(14 25 58 / 0.9),
+        rgb(21 86 162 / 0.9),
+        rgb(144 38 109 / 0.9)
+      ),
+      url("../../assets/images/heroSection-background.webp");
+      margin-top: -70px;
+
+      & article{
+        & h2{
+            font-family: var(--primary-font);
+            font-size: 4rem;
+            color: white;
+            font-weight: 600;
+        }
+
+        & p{
+            max-width: 100ch;
+            color: #ccc;
+        }
+      }
+}

@@ -1,13 +1,153 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;900&family=Roboto:ital,wght@0,300;0,400;0,500;1,300&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+  --text-font: "Poppins", sans-serif;
+  --primary-font: "Roboto", sans-serif;
+  --heading-font: "Anton", sans-serif;
+  --primary-color: rgb(30, 144, 255);
+  --text-color: #2b2b2b;
+  --logo-text-color: rgb(90, 143, 197);
+  --service-card-color: #f8faff;
+  --heading-color: #05364d;
+  --light-gray: #808080;
+  --purple: #9c27b0;
+  --white: #edf8ff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  /* background-color: #192227; */
+}
+.container {
+  padding: 3rem;
+  margin: 2rem auto;
+}
+
+li {
+  list-style: none;
+}
+
+li:not(.dropdown_items) {
+  padding: 5px 10px;
+  height: fit-content;
+}
+
+a,
+span.serviceSpan {
+  text-decoration: none;
+  color: currentColor;
+  font-family: var(--text-font);
+  cursor: pointer;
+}
+
+ul:not(.services__dropdown) {
+  display: flex;
+  align-items: center;
+}
+
+h2.heading {
+  margin-bottom: 57px;
+  font-family: var(--primary-font);
+  color: var(--purple);
+  font-size: 2.5rem;
+  position: relative;
+}
+
+h2.heading::before {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 3ch;
+  background-color: var(--purple);
+  opacity: 0.5;
+  top: 100%;
+  border-radius: 10px;
+}
+
+h2.big-heading{
+  font-family: var(--primary-font);
+  color: var(--heading-color);
+  font-size: 2rem;
+}
+
+h3 {
+  font-family: var(--primary-font);
+  color: var(--heading-color);
+  font-size: 1.6rem;
+}
+
+p {
+  font-family: var(--text-font);
+  color: var(--text-color);
+  font-weight: 300;
+  line-height: 1.5rem;
+  font-size: 0.9rem;
+}
+li.tag-list {
+  position: relative;
+  width: fit-content;
+  display: grid;
+  place-items: center;
+  padding-left: 2rem;
+}
+
+li.tag-list::before {
+  content: "\2714";
+  font-size: 1.5rem;
+  color: lightseagreen;
+  position: absolute;
+  left: 0;
+}
+
+a.callNow-btn {
+  padding: 0.8rem 1.5rem;
+  background-color: var(--purple);
+  color: white;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.5);
+}
+
+
+.dflex{
+  display: flex;
+}
+
+.wrap{
+  flex-wrap: wrap;
+}
+
+.dflex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dflex-column{
+  flex-direction: column;
+}
+
+.gap-1{
+  gap: 1rem;
+}
+
+.gap-2{
+  gap: 2rem;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.grid-center{
+  display: grid;
+  place-items: center;
 }

@@ -1,0 +1,128 @@
+.hero-container {
+  min-height: 700px;
+  margin-top: -70px;
+
+  background: linear-gradient(
+      to top right,
+      rgb(14 25 58 / 0.9),
+      20%,
+      rgb(21 86 162 / 0.9),
+      30%,
+      rgb(144 38 109 / 0.9)
+    ),
+    url("../../assets/images/heroSection-background.webp");
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+
+  & > * {
+    flex: 1 1 450px;
+  }
+  & .left-content {
+    padding: 3rem;
+    padding-top: 100px;
+
+    & .hero-content-heading {
+      align-items: baseline;
+      gap: 18px;
+    }
+  }
+
+  & .right-content {
+    padding: 3rem;
+
+    & .stack {
+      height: 300px;
+      width: 300px;
+      border-radius: 10px;
+      background-color: var(--purple);
+      box-shadow: 0 0 30px 10px rgb(0 0 0 / 0.2);
+      transform: rotate3d(1, -2, -5, 45deg);
+      perspective: 500px;
+      position: relative;
+      z-index: 5;
+      animation: move1 20s ease-in-out infinite;
+    }
+
+    & .stack::before {
+      content: "";
+      position: absolute;
+      height: inherit;
+      width: inherit;
+      border-radius: 10px;
+      background-color: purple;
+      box-shadow: 0 0 30px 10px rgb(0 0 0 / 0.2);
+      top: 30%;
+      left: 10%;
+      z-index: -1;
+      animation: move2 22s ease-in-out infinite;
+    }
+
+    & .stack::after {
+      content: "";
+      position: absolute;
+      height: inherit;
+      width: inherit;
+      border-radius: 10px;
+      background-color: var(--purple);
+      box-shadow: 0 0 30px 10px rgb(0 0 0 / 0.2);
+      top: 13%;
+      right: 10%;
+      animation: move3 25s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    transform: scale(0) rotate(0) translateY(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.4) rotate(360deg) translateY(-92px);
+    opacity: 1;
+  }
+}
+
+.socialIcons {
+  border: 1px solid var(--white);
+  border-radius: 5px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  transform-origin: center;
+}
+
+@keyframes move1 {
+  0%,
+  100% {
+    margin-left: -1rem;
+  }
+
+  50% {
+    margin-left: 1rem;
+  }
+}
+
+@keyframes move2 {
+  0%,
+  100% {
+    margin-top: -1rem;
+  }
+
+  50% {
+    margin-top: 1rem;
+  }
+}
+
+@keyframes move3 {
+  0%,
+  100% {
+    margin-right: -1rem;
+  }
+
+  50% {
+    margin-right: 1rem;
+  }
+}

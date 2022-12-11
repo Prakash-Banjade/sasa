@@ -1,0 +1,132 @@
+@media screen and (max-width: 950px){
+  nav{
+    padding-left: 10px !important;
+  }
+  .container{
+    padding: 1.5rem !important;
+  }
+  .about-container{
+    display: block !important;
+  }
+
+  .about-container .right-content{
+    margin-top: 4rem !important;
+  }
+  
+  .service-card{
+    padding: 10px !important;
+  }
+
+  .service-card button{
+    margin-top: 0 !important;
+  }
+
+  .services-card-container{
+    gap: 2rem !important;
+  }
+  .about-container .left-content{
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .about-container .left-content h3, .about-container .left-content p{
+    max-width: fit-content !important;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  html {
+    font-size: 15px;
+  }
+
+  .nav {
+    padding: 0px;
+    position: relative;
+    z-index: 11;
+  }
+  ul:not(.services__dropdown, .tags-ans) {
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    padding: 0 2rem;
+    margin-right: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 10;
+    background-color: #ccc;
+    border-bottom: 1px solid var(--light-gray);
+    box-shadow: 0 10px 15px rgb(0 0 0 / 0.1);
+    gap: 1rem;
+    display: none;
+  }
+
+  ul.active:not(.services__dropdown) {
+    display: flex;
+    animation: menuDrop 150ms ease-in-out;
+  }
+
+  @keyframes menuDrop {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  li.menuToggle {
+    display: block !important;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    right: 20px;
+  }
+
+  .hero-content-image {
+    display: none !important;
+  }
+
+  .nav__links li.services .services__dropdown{
+    top: 100% !important;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  li.menuToggle {
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 680px){
+  .tags-container{
+    padding: 1rem !important;
+    align-items: flex-start !important;
+    flex-direction: column !important;
+  }
+
+  .tag{
+    padding: 1rem !important;
+    flex:auto !important;
+  }
+
+  .big-font{
+    font-size: 3rem !important;
+  }
+}
+
+@media screen and (max-width: 427px) {
+    .hero-content-heading{
+        gap: 0 !important;
+    }
+    .hero_heading_secondary{
+        transform: translateY(-20px) !important;
+    }
+
+    
+}

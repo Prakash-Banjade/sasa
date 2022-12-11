@@ -1,0 +1,26 @@
+.features-container {
+  & .features-cards {
+    gap: 10px;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  & .features-cards > * {
+    flex: 1 1 250px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 2rem;
+    gap: 20px;
+
+    & p {
+      --max-line: 4;
+
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: var(--max-line);
+
+      font-family: var(--text-font);
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.footer{
+    background-color: #021017;
+
+    & .social-icons{
+        & a{
+            height: 50px;
+            width: 50px;
+            background-color: #fff;
+            border-radius: 50%;
+            border: #eee;
+        }
+    }
+}
+

@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import './MediaQueries.css';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer'
+import {Routes, Route, useLocation} from 'react-router-dom'
+import HomePage from './components/routes/HomePage';
+import AboutUsPage from './components/routes/AboutUsPage';
+import { useEffect } from 'react';
+import LatestPosts from './components/routes/LatestPosts';
+import AlertMessage from './components/Alert';
+
 
 function App() {
+  let currLocation = useLocation()
+
+  useEffect(() => {
+    document.querySelector(".nav__links").classList.remove("active");
+    document.getElementById("bar").classList.remove("toggled");
+  }, [currLocation])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <AlertMessage />
+      <Navbar />
+
+      <Routes>
+        <Route end path="/" element={<HomePage />} />
+        <Route end path="/about" element={<AboutUsPage />} />
+        <Route end path="/latestposts" element={<LatestPosts />} />
+      </Routes>
+
+      <Footer />
+    </>
   );
 }
 

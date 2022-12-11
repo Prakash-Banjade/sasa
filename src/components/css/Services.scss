@@ -1,0 +1,40 @@
+.services-card-container{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.service-card{
+    padding: 15px;
+    background: var(--service-card-color);
+    border-radius: 5px;
+
+    & h3{
+        font-family: var(--primary-font);
+        font-size: 1.5rem;
+        color: var(--heading-color);
+        font-weight: 400;
+    }
+
+    & p{
+        --max-line: 4;
+
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: var(--max-line);
+        
+        font-family: var(--text-font);
+        color: var(--light-gray);
+        font-size: .9rem;
+
+    }
+
+    & button{
+        width: fit-content;
+        margin-top: 1rem;
+    }
+}
+

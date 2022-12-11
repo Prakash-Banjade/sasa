@@ -1,0 +1,137 @@
+.about-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 4rem;
+  background-color: #f2f2f2;
+
+  & .left-content {
+    & figure {
+      border: 2px dotted #aaa;
+      border-radius: 50%;
+      width: fit-content;
+      margin: 2rem;
+      position: relative;
+
+      & img {
+        z-index: 1;
+      }
+
+      & .rotatingBack {
+        height: 100%;
+        width: 5px;
+        position: absolute;
+        transform-origin: center;
+        animation: rotate 15s linear infinite;
+
+        & .rotatingBackCircle {
+          height: inherit;
+          width: inherit;
+          background-color: transparent;
+          position: relative;
+        }
+
+        & .rotatingBackCircle::before,
+        .rotatingBackCircle::after {
+          content: "";
+          position: absolute;
+          height: 15px;
+          width: 15px;
+          border-radius: 50%;
+          background-color: dodgerblue;
+        }
+
+        .rotatingBackCircle::before {
+          top: -3%;
+          background-color: var(--primary-color);
+        }
+
+        .rotatingBackCircle::after {
+          bottom: -3%;
+          background-color: var(--purple);
+        }
+      }
+    }
+
+    & h3 {
+      background: linear-gradient(
+        to right,
+        var(--purple),
+        var(--primary-color)
+      );
+      background-clip: text;
+      color: transparent;
+      max-width: 26ch;
+    }
+
+    & p {
+      font-size: 1.1rem;
+      max-width: 44ch;
+
+      & strong {
+        color: var(--primary-color);
+        font-weight: 500;
+      }
+    }
+  }
+
+  & .right-content {
+    & h4 {
+      font-family: var(--primary-font);
+      color: var(--light-gray);
+      align-items: center;
+      gap: 0.8rem;
+
+      & span {
+        height: 10px;
+        width: 10px;
+        background-color: var(--primary-color);
+      }
+    }
+
+    & .ticks {
+      align-items: center;
+      gap: 10px;
+
+      & span {
+        font-family: var(--text-font);
+      }
+    }
+
+    & .firstTick {
+      margin-top: 1.5rem;
+    }
+
+    & a {
+      margin-top: 2rem;
+      width: fit-content;
+      font-size: 1rem;
+      padding: 15px 30px;
+      font-family: var(--primary-font);
+      color: white;
+      background: linear-gradient(
+        to right,
+        var(--primary-color),
+        var(--purple)
+      );
+      border: none;
+      box-shadow: 0 2px 10px 1px var(0 0 0 / 0.2);
+      background-size: 150%;
+      transition: background-position 150ms ease-in;
+      cursor: pointer;
+    }
+
+    & a:hover {
+      background-position: 100%;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0;
+  }
+  to {
+    rotate: 360deg;
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/sasa/static/css/main.321cc307.css",
+    "main.js": "/sasa/static/js/main.7fe7dc3a.js",
+    "static/media/heroSection-background.webp": "/sasa/static/media/heroSection-background.59fce21ef772ea0308a1.webp",
+    "static/media/founder_2.jpg": "/sasa/static/media/founder_2.f3c8f8647929e5c7350b.jpg",
+    "static/media/founder_1.jpg": "/sasa/static/media/founder_1.f0540f27b45dd47c7e64.jpg",
+    "static/media/logo.png": "/sasa/static/media/logo.2287eefd1bede9855ee8.png",
+    "index.html": "/sasa/index.html",
+    "main.321cc307.css.map": "/sasa/static/css/main.321cc307.css.map",
+    "main.7fe7dc3a.js.map": "/sasa/static/js/main.7fe7dc3a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.321cc307.css",
+    "static/js/main.7fe7dc3a.js"
+  ]
+}

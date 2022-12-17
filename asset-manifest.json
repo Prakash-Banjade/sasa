@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/sasa/static/css/main.80831595.css",
+    "main.css": "/sasa/static/css/main.0f24c6f1.css",
     "main.js": "/sasa/static/js/main.dce619fa.js",
     "static/media/heroSection-background.webp": "/sasa/static/media/heroSection-background.59fce21ef772ea0308a1.webp",
     "static/media/contactImg.jpg": "/sasa/static/media/contactImg.054113888b5754a7ec41.jpg",
@@ -8,11 +8,11 @@
     "static/media/founder_1.jpg": "/sasa/static/media/founder_1.f0540f27b45dd47c7e64.jpg",
     "static/media/logo.png": "/sasa/static/media/logo.2287eefd1bede9855ee8.png",
     "index.html": "/sasa/index.html",
-    "main.80831595.css.map": "/sasa/static/css/main.80831595.css.map",
+    "main.0f24c6f1.css.map": "/sasa/static/css/main.0f24c6f1.css.map",
     "main.dce619fa.js.map": "/sasa/static/js/main.dce619fa.js.map"
   },
   "entrypoints": [
-    "static/css/main.80831595.css",
+    "static/css/main.0f24c6f1.css",
     "static/js/main.dce619fa.js"
   ]
 }

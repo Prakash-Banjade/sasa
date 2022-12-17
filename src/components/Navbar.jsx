@@ -3,7 +3,7 @@ import logo_white from "../assets/images/logo.png";
 import logo_blue from "../assets/images/logo.gif";
 import "./css/Navbar.scss";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Button, Tooltip } from "@mui/material";
+import { Tooltip } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -41,8 +41,8 @@ export default function Navbar() {
   };
 
   const navLinkStyle = ({ isActive }) => ({
-    color: isActive ? "var(--primary-color)" : navListColor
-  })
+    color: isActive ? "var(--primary-color)" : navListColor,
+  });
 
   return (
     <>
@@ -73,10 +73,7 @@ export default function Navbar() {
 
         <ul className="nav__links" data-dropdown>
           <li className="nav_link active">
-            <NavLink
-              style={navLinkStyle}
-              to="/"
-            >
+            <NavLink style={navLinkStyle} to="/">
               Home
             </NavLink>
           </li>
@@ -122,16 +119,14 @@ export default function Navbar() {
             </ul>
           </li>
           <li className="nav_link">
-            <a style={{ color: navListColor }} href="/">
+            <a style={{ color: navListColor }} role="link">
               Company
             </a>
           </li>
           <li className="nav_link contact">
-            <a href="/">
-              <Button variant="contained" color="secondary">
+            <NavLink to="/contact">
                 Contact
-              </Button>
-            </a>
+            </NavLink>
           </li>
         </ul>
       </nav>

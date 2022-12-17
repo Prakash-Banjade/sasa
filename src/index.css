@@ -48,6 +48,7 @@ span.serviceSpan {
   color: currentColor;
   font-family: var(--text-font);
   cursor: pointer;
+  /* min-width: fit-content; */
 }
 
 ul:not(.services__dropdown) {
@@ -114,6 +115,7 @@ a.callNow-btn {
   background-color: var(--purple);
   color: white;
   box-shadow: 0 4px 10px rgb(0 0 0 / 0.5);
+  /* min-width: fit-content; */
 }
 
 

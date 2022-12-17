@@ -24,7 +24,8 @@ const tagStyle = {
 
 const tabTextStyle = {
     fontFamily: 'var(--primary-font)',
-    color: 'white'
+    color: 'white',
+    fontSize: '1rem'
 }
 
 

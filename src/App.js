@@ -7,6 +7,7 @@ import AboutUsPage from './components/routes/AboutUsPage';
 import { useEffect } from 'react';
 import LatestPosts from './components/routes/LatestPosts';
 import AlertMessage from './components/Alert';
+import Contact from './components/Contact';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
   useEffect(() => {
     document.querySelector(".nav__links").classList.remove("active");
     document.getElementById("bar").classList.remove("toggled");
+    window.scrollTo(0,0);
   }, [currLocation])
 
   return (
@@ -26,6 +28,7 @@ function App() {
         <Route end path="/" element={<HomePage />} />
         <Route end path="/about" element={<AboutUsPage />} />
         <Route end path="/latestposts" element={<LatestPosts />} />
+        <Route end path="/contact" element={<Contact />} />
       </Routes>
 
       <Footer />

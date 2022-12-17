@@ -1,10 +1,14 @@
 import React from "react";
 import "./css/WhySASA.scss";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const WhySASA = () => {
+  AOS.init();
   return (
     <div className="why_sasa-container container dflex wrap">
-      <div className="left-content">
+      <div className="left-content" data-aos="zoom-in-up" >
         <h2 className="why-ques">Why SASA ?</h2>
 
         <div className="why-ans dflex">
@@ -33,7 +37,7 @@ const WhySASA = () => {
         </ul>
       </div>
 
-      <div className="right-content">
+      <div className="right-content" data-aos="zoom-in-up">
         <div className="title">Our Top Notch Qualities</div>
         <ol className="dflex dflex-column gap-1">
           <li>Open and honest communication</li>

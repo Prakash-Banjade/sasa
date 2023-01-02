@@ -1,19 +1,23 @@
 {
   "files": {
-    "main.css": "/sasa/static/css/main.00284ee7.css",
-    "main.js": "/sasa/static/js/main.3cbb2f89.js",
+    "main.css": "/sasa/static/css/main.f0ab21ac.css",
+    "main.js": "/sasa/static/js/main.6f19467c.js",
     "static/media/heroSection-background.webp": "/sasa/static/media/heroSection-background.59fce21ef772ea0308a1.webp",
+    "static/media/tuitionClassesHeroImg.png": "/sasa/static/media/tuitionClassesHeroImg.fde5fef429583519b08f.png",
     "static/media/contactImg.jpg": "/sasa/static/media/contactImg.054113888b5754a7ec41.jpg",
     "static/media/founder_2.jpg": "/sasa/static/media/founder_2.f3c8f8647929e5c7350b.jpg",
+    "static/media/classes_category_2.jpg": "/sasa/static/media/classes_category_2.8624e8e919fc75cf4607.jpg",
+    "static/media/classes_category_3.jpg": "/sasa/static/media/classes_category_3.bac64f67bc8ea264c415.jpg",
     "static/media/drivingLicense.png": "/sasa/static/media/drivingLicense.757b96333370ba3a8245.png",
+    "static/media/classes_category_1.jpg": "/sasa/static/media/classes_category_1.355f42dd45c1183c401d.jpg",
     "static/media/founder_1.jpg": "/sasa/static/media/founder_1.f0540f27b45dd47c7e64.jpg",
     "static/media/logo.png": "/sasa/static/media/logo.2287eefd1bede9855ee8.png",
     "index.html": "/sasa/index.html",
-    "main.00284ee7.css.map": "/sasa/static/css/main.00284ee7.css.map",
-    "main.3cbb2f89.js.map": "/sasa/static/js/main.3cbb2f89.js.map"
+    "main.f0ab21ac.css.map": "/sasa/static/css/main.f0ab21ac.css.map",
+    "main.6f19467c.js.map": "/sasa/static/js/main.6f19467c.js.map"
   },
   "entrypoints": [
-    "static/css/main.00284ee7.css",
-    "static/js/main.3cbb2f89.js"
+    "static/css/main.f0ab21ac.css",
+    "static/js/main.6f19467c.js"
   ]
 }

@@ -93,6 +93,7 @@ nav.scrolled{
 li.menuToggle{
     cursor: pointer;
     display: none;
+    padding: 10px;
 
     &::selection{
         background-color: transparent;
@@ -103,6 +104,7 @@ li.menuToggle{
         width: 2.1rem;
         position: relative;
         cursor: pointer;
+        border-radius: 5px;
 
         &::selection{
             background-color: transparent;
@@ -115,6 +117,7 @@ li.menuToggle{
                 height: inherit;
                 width: inherit;
                 background-color: inherit;
+                border-radius: inherit;
                 transition: transform 150ms linear;
                 transform-origin: center;
             }

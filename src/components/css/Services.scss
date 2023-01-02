@@ -38,3 +38,14 @@
     }
 }
 
+
+.viewAllBtn{
+    button{
+        color: var(--purple);
+        font-size: 1.2rem;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}

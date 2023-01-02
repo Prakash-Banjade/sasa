@@ -51,6 +51,10 @@ span.serviceSpan {
   /* min-width: fit-content; */
 }
 
+.heroSection{
+  clip-path: ellipse(160% 75% at 50% 25%);
+}
+
 ul:not(.services__dropdown) {
   display: flex;
   align-items: center;
@@ -143,6 +147,10 @@ a.callNow-btn {
 
 .gap-2{
   gap: 2rem;
+}
+
+.gap-3{
+  gap: 3rem;
 }
 
 .text-center{

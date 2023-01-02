@@ -7,7 +7,6 @@ import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import LocalPhoneRoundedIcon from "@mui/icons-material/LocalPhoneRounded";
 
 export default function HeroSection() {
-
   return (
     <>
       <div className="hero-container dflex wrap gap-2">
@@ -69,11 +68,7 @@ export default function HeroSection() {
               variant="contained"
               sx={{ boxShadow: "0 4px 10px rgb(0 0 0 / .2)" }}
             >
-              <Link
-                to="/about"
-              >
-                Learn More
-              </Link>
+              <Link to="/about">Learn More</Link>
             </Button>
             <Button
               className="hero-button"
@@ -85,12 +80,12 @@ export default function HeroSection() {
                 "&:hover": { backgroundColor: "white", opacity: ".9" },
               }}
             >
-              Contact us
+              <Link to="/contact">Contact us</Link>
             </Button>
           </div>
 
           <div
-            classname="social-media"
+            className="social-media"
             style={{
               display: "flex",
               gap: "10px",

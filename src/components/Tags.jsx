@@ -41,7 +41,7 @@ const Tags = () => {
   return (
     <div style={tagContainerStyles} className="tags-container container">
       {tagTitle.map(tag => {
-        return <Tag tagTitle={tag} />
+        return <Tag tagTitle={tag} key={tag.length} />
       })}
     </div>
   )

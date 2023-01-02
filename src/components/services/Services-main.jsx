@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ServiceCard from "./Service-card";
 import "../css/Services.scss";
 
@@ -33,9 +34,19 @@ const ServicesFront = () => {
       <div className="services-card-container">
         {Array.from(Object.keys(servicesInfo)).map((title) => {
           return (
-            <ServiceCard key={title} title={title} description={servicesInfo[title]} />
+            <ServiceCard
+              key={title}
+              title={title}
+              description={servicesInfo[title]}
+            />
           );
         })}
+      </div>
+
+      <div className="viewAllBtn dflex">
+        <button style={{ marginLeft: "auto" }}>
+          <Link to="services">View all</Link>
+        </button>
       </div>
     </div>
   );

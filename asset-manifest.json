@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sasa/static/css/main.23930185.css",
-    "main.js": "/sasa/static/js/main.50814b7e.js",
+    "main.css": "/sasa/static/css/main.f5d9777e.css",
+    "main.js": "/sasa/static/js/main.2fea44db.js",
     "static/media/heroSection-background.webp": "/sasa/static/media/heroSection-background.59fce21ef772ea0308a1.webp",
     "static/media/tuitionClassesHeroImg.png": "/sasa/static/media/tuitionClassesHeroImg.fde5fef429583519b08f.png",
     "static/media/prithvi.jpg": "/sasa/static/media/prithvi.569ef3fd5e5e5be22df2.jpg",
@@ -20,11 +20,11 @@
     "static/media/slick.eot": "/sasa/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/sasa/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/sasa/static/media/slick.295183786cd8a1389865.woff",
-    "main.23930185.css.map": "/sasa/static/css/main.23930185.css.map",
-    "main.50814b7e.js.map": "/sasa/static/js/main.50814b7e.js.map"
+    "main.f5d9777e.css.map": "/sasa/static/css/main.f5d9777e.css.map",
+    "main.2fea44db.js.map": "/sasa/static/js/main.2fea44db.js.map"
   },
   "entrypoints": [
-    "static/css/main.23930185.css",
-    "static/js/main.50814b7e.js"
+    "static/css/main.f5d9777e.css",
+    "static/js/main.2fea44db.js"
   ]
 }

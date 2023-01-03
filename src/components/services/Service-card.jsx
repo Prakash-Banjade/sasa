@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 
 const ServiceCard = (props) => {
   return (
@@ -15,12 +16,12 @@ const ServiceCard = (props) => {
           "&:hover": {
             backgroundColor: "rgb(30 144 255 / .5)",
             boxShadow: "none",
-            color: '#454545'
+            color: "#454545",
           },
         }}
         variant="contained"
       >
-        Explore
+        <Link to={props.link}>Explore</Link>
       </Button>
     </div>
   );

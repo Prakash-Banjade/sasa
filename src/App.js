@@ -12,6 +12,14 @@ import DrivingLicense from "./components/services/DrivingLicense";
 import ServicesPage from "./components/routes/ServicesPage";
 import Passport from "./components/services/Passport";
 import TuitionClasses from "./components/services/TuitionClasses";
+import OnlineFormSubmission from "./components/services/OnlineFormSubmission";
+import ComputerClasses from "./components/services/ComputerClasses";
+import ShareMarket from "./components/services/ShareMarket";
+import Webdesigning from "./components/services/Webdesigning";
+import NotFound from "./components/NotFound";
+
+
+
 
 function App() {
   let currLocation = useLocation();
@@ -37,9 +45,14 @@ function App() {
           <Route path="drivinglicense" element={<DrivingLicense />} />
           <Route path="passport" element={<Passport />} />
           <Route path="tuitionclasses" element={<TuitionClasses />} />
+          <Route path="onlineforms" element={<OnlineFormSubmission />} />
+          <Route path="sharemarket" element={<ShareMarket />} />
+          <Route path="webdesigning" element={<Webdesigning />} />
+          <Route path="computerclasses" element={<ComputerClasses />} />
         </Route>
         
         <Route end path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />

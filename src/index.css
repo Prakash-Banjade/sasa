@@ -32,6 +32,11 @@ body {
   margin: 2rem auto;
 }
 
+.navback{
+  height: 70px;
+  margin-top: -70px;
+}
+
 li {
   list-style: none;
 }

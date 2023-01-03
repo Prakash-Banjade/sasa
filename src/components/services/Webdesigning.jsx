@@ -4,7 +4,7 @@ import ConstructionIcon from '@mui/icons-material/Construction';
 import { Link, useNavigate } from 'react-router-dom'
 
 
-const Passport = () => {
+const Webdesigning = () => {
     let navBack = useContext(NavBackContext)
     let navigate = useNavigate();
 
@@ -28,4 +28,4 @@ const Passport = () => {
   )
 }
 
-export default Passport
+export default Webdesigning

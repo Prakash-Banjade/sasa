@@ -200,6 +200,7 @@ const Carousel = () => {
             university={teacher.university}
             experience={teacher.experience}
             fb={teacher.fb}
+            key={teacher.fb}
           />
         ))}
       </Slider>
@@ -238,7 +239,7 @@ const TuitionClasses = () => {
         <h2>Want The Best Tuition Classes?</h2>
         <h3>You have come to the right place</h3>
         <button>
-          <Link end to="/contact">
+          <Link to="/contact">
             Hire Our Best Tutors
           </Link>
         </button>
@@ -248,16 +249,16 @@ const TuitionClasses = () => {
         <h3 className="text-center">Best Tutors For Online/Offline Tuitions</h3>
         <ol className="dflex wrap gap-1">
           <li className="dflex gap-1">
-            <input type="checkbox" id="check1" checked />
-            <label for="check1">Online School For Every Student</label>
+            <input type="checkbox" id="check1" defaultChecked readOnly />
+            <label htmlFor="check1">Online School For Every Student</label>
           </li>
           <li className="dflex gap-1">
-            <input type="checkbox" id="check2" checked />
-            <label for="check2">All Subjects And Board</label>
+            <input type="checkbox" id="check2" defaultChecked readOnly />
+            <label htmlFor="check2">All Subjects And Board</label>
           </li>
           <li className="dflex gap-1">
-            <input type="checkbox" id="check3" checked />
-            <label for="check2">Online Classes For Class 5 to 12</label>
+            <input type="checkbox" id="check3" defaultChecked readOnly />
+            <label htmlFor="check2">Online Classes For Class 5 to 12</label>
           </li>
         </ol>
 

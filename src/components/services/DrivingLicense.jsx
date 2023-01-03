@@ -78,7 +78,7 @@ const DrivingLicense = () => {
             </p>
           </li>
 
-          <span className="firstSpan">&lt;&gt;</span>
+          <span className="firstSpan" data-aos="fade-down" data-aos-offset="302">&lt;&gt;</span>
 
           <li className="feature2" data-aos="fade-down" data-aos-offset="300">
             <h2>
@@ -99,7 +99,7 @@ const DrivingLicense = () => {
             </p>
           </li>
 
-          <span className="secondSpan">&lt;&gt;</span>
+          <span className="secondSpan" data-aos="fade-down" data-aos-offset="302">&lt;&gt;</span>
 
           <li className="feature3" data-aos="fade-down" data-aos-offset="300">
             
@@ -118,7 +118,7 @@ const DrivingLicense = () => {
             </p>
           </li>
 
-          <span className="thirdSpan">&lt;&gt;</span>
+          <span className="thirdSpan" data-aos="fade-down" data-aos-offset="302">&lt;&gt;</span>
 
           <li className="feature4" data-aos="fade-down" data-aos-offset="300">
             
@@ -136,7 +136,7 @@ const DrivingLicense = () => {
             </p>
           </li>
 
-          <span className="forthSpan">&lt;&gt;</span>
+          <span className="forthSpan" data-aos="fade-down" data-aos-offset="302">&lt;&gt;</span>
 
           <li className="feature5" data-aos="fade-down" data-aos-offset="280">
             

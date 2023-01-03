@@ -118,7 +118,7 @@ export default function Navbar() {
                   <Link to="services/tuitionclasses">Tution Classes</Link>
                 </li>
                 <li className="dropdown_items">
-                  <a href="/">Online Forms</a>
+                  <Link to="services/onlineforms">Online Forms</Link>
                 </li>
                 <li className="dropdown_items">
                   <Link to="/services">More</Link>

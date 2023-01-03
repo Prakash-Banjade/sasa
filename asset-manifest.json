@@ -1,23 +1,30 @@
 {
   "files": {
-    "main.css": "/sasa/static/css/main.f0ab21ac.css",
-    "main.js": "/sasa/static/js/main.6f19467c.js",
+    "main.css": "/sasa/static/css/main.23930185.css",
+    "main.js": "/sasa/static/js/main.50814b7e.js",
     "static/media/heroSection-background.webp": "/sasa/static/media/heroSection-background.59fce21ef772ea0308a1.webp",
     "static/media/tuitionClassesHeroImg.png": "/sasa/static/media/tuitionClassesHeroImg.fde5fef429583519b08f.png",
+    "static/media/prithvi.jpg": "/sasa/static/media/prithvi.569ef3fd5e5e5be22df2.jpg",
     "static/media/contactImg.jpg": "/sasa/static/media/contactImg.054113888b5754a7ec41.jpg",
     "static/media/founder_2.jpg": "/sasa/static/media/founder_2.f3c8f8647929e5c7350b.jpg",
     "static/media/classes_category_2.jpg": "/sasa/static/media/classes_category_2.8624e8e919fc75cf4607.jpg",
     "static/media/classes_category_3.jpg": "/sasa/static/media/classes_category_3.bac64f67bc8ea264c415.jpg",
     "static/media/drivingLicense.png": "/sasa/static/media/drivingLicense.757b96333370ba3a8245.png",
     "static/media/classes_category_1.jpg": "/sasa/static/media/classes_category_1.355f42dd45c1183c401d.jpg",
+    "static/media/mishan.jpg": "/sasa/static/media/mishan.08083b5e26e5bb4b745a.jpg",
     "static/media/founder_1.jpg": "/sasa/static/media/founder_1.f0540f27b45dd47c7e64.jpg",
+    "static/media/patel.jpg": "/sasa/static/media/patel.a71b1a722d91bd757c20.jpg",
     "static/media/logo.png": "/sasa/static/media/logo.2287eefd1bede9855ee8.png",
     "index.html": "/sasa/index.html",
-    "main.f0ab21ac.css.map": "/sasa/static/css/main.f0ab21ac.css.map",
-    "main.6f19467c.js.map": "/sasa/static/js/main.6f19467c.js.map"
+    "static/media/slick.svg": "/sasa/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/sasa/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/sasa/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/sasa/static/media/slick.295183786cd8a1389865.woff",
+    "main.23930185.css.map": "/sasa/static/css/main.23930185.css.map",
+    "main.50814b7e.js.map": "/sasa/static/js/main.50814b7e.js.map"
   },
   "entrypoints": [
-    "static/css/main.f0ab21ac.css",
-    "static/js/main.6f19467c.js"
+    "static/css/main.23930185.css",
+    "static/js/main.50814b7e.js"
   ]
 }

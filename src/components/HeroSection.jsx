@@ -66,7 +66,7 @@ export default function HeroSection() {
             <Button
               className="hero-button"
               variant="contained"
-              sx={{ boxShadow: "0 4px 10px rgb(0 0 0 / .2)" }}
+              sx={{ boxShadow: "0 4px 10px rgb(0 0 0 / .2)", padding: '10px 18px' }}
             >
               <Link to="/about">Learn More</Link>
             </Button>
@@ -77,6 +77,7 @@ export default function HeroSection() {
               sx={{
                 boxShadow: "0 4px 10px rgb(0 0 0 / .2)",
                 backgroundColor: "white",
+                padding: '10px 18px',
                 "&:hover": { backgroundColor: "white", opacity: ".9" },
               }}
             >

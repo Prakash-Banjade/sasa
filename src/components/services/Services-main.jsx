@@ -44,7 +44,7 @@ const ServicesFront = () => {
       </div>
 
       <div className="viewAllBtn dflex">
-        <button style={{ marginLeft: "auto" }}>
+        <button style={{ marginLeft: "auto", marginTop: '1rem' }}>
           <Link to="services">View all</Link>
         </button>
       </div>

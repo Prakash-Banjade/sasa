@@ -11,6 +11,7 @@ import Contact from "./components/Contact";
 import DrivingLicense from "./components/services/DrivingLicense";
 import ServicesPage from "./components/routes/ServicesPage";
 import Passport from "./components/services/Passport";
+import TuitionClasses from "./components/services/TuitionClasses";
 
 function App() {
   let currLocation = useLocation();
@@ -23,7 +24,7 @@ function App() {
 
   return (
     <>
-      {/* <AlertMessage /> */}
+      <AlertMessage />
       <Navbar />
 
       <Routes>
@@ -35,6 +36,7 @@ function App() {
           <Route index element={<ServicesPage />} />
           <Route path="drivinglicense" element={<DrivingLicense />} />
           <Route path="passport" element={<Passport />} />
+          <Route path="tuitionclasses" element={<TuitionClasses />} />
         </Route>
         
         <Route end path="/contact" element={<Contact />} />

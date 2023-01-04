@@ -1,6 +1,5 @@
 import React from "react";
 import "../css/About.scss";
-import "../css/AboutPage.scss";
 import Logo from "../../assets/images/logo.gif";
 
 const AboutMainAboutPage = () => {

@@ -23,7 +23,7 @@ const Footer = () => {
         <h3 style={{ color: '#138bc7 '}}>SASA</h3>
       </NavLink>
 
-      <div className="social-icons dflex-center" style={{gap: '1rem'}}>
+      <div className="social-icons dflex-center gap-1" >
         <a href="https://www.facebook.com/profile.php?id=100087576614717" target="_blank" rel="noopener noreferrer" className="dflex-center">
           <FacebookOutlinedIcon />
         </a>
@@ -37,9 +37,12 @@ const Footer = () => {
         </a>
       </div>
 
+    <div className="text-center">
       <p className="copyright" style={{color: 'var(--light-gray)'}}>
         Copyright &copy;-2022 | All rights reserved - SASA Group
       </p>
+      <address className="address">Golpark, Butwal-3 | Shivraj-5, Kapilvastu <br /><strong>Nepal</strong></address>
+    </div>
     </footer>
   );
 };

@@ -17,6 +17,7 @@ import tutor5 from "../../assets/images/prithvi.jpg";
 import tutor4 from "../../assets/images/patel.jpg";
 import tutor3 from "../../assets/images/founder_1.jpg";
 import tutor2 from "../../assets/images/founder_2.jpg";
+import tutor6 from '../../assets/images/sanjay.png'
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -160,6 +161,14 @@ const Carousel = () => {
       experience: "3 year",
       img: tutor3,
       fb: "https://www.facebook.com/profile.php?id=100009343787975",
+    },
+    {
+      name: "Sanjay Bishwakarma",
+      qualification: "Bsc. CSIT",
+      university: "T.U.",
+      experience: "1 year",
+      img: tutor6,
+      fb: "https://www.facebook.com/sanjay.bishwakarma.92351",
     },
   ];
 

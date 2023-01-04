@@ -7,7 +7,7 @@ import AboutUsPage from "./components/routes/AboutUsPage";
 import { useEffect } from "react";
 import LatestPosts from "./components/routes/LatestPosts";
 import AlertMessage from "./components/Alert";
-import Contact from "./components/Contact";
+import Contact from "./components/routes/Contact";
 import DrivingLicense from "./components/services/DrivingLicense";
 import ServicesPage from "./components/routes/ServicesPage";
 import Passport from "./components/services/Passport";

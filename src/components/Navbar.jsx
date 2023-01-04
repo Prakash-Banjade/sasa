@@ -9,12 +9,30 @@ import { NavBackContext } from "../context/context";
 
 export default function Navbar() {
   const navRef = useRef();
-  const {setNavBack} = useContext(NavBackContext)
+  const serviceTabRef = useRef();
+  const service1 = useRef();
+  const service2 = useRef()
+  const service3 = useRef()
+  const service4 = useRef()
+  const moreBtnRef = useRef()
+  const { setNavBack } = useContext(NavBackContext);
   const [logo, setLogo] = useState(logo_white);
   const [navListColor, setNavListColor] = useState("var(--white)");
   const [logoTextColor, setLogoTextColor] = useState("var(--white)");
 
   let location = useLocation();
+
+  const changes = ()=>{
+    serviceTabRef.current.style.color = location.pathname.includes("/services") ? "var(--primary-color)" : navListColor
+      service1.current.style.color = location.pathname === "/services/drivinglicense"? 'var(--primary-color)':'black'
+      service2.current.style.color = location.pathname === "/services/passport"? 'var(--primary-color)':'black'
+      service3.current.style.color = location.pathname === "/services/tuitionclasses"? 'var(--primary-color)':'black'
+      service4.current.style.color = location.pathname === "/services/onlineforms"? 'var(--primary-color)':'black'
+      moreBtnRef.current.style.display = location.pathname === '/services'? 'none' : 'block'
+  }
+  useEffect(() => {
+      changes()
+  }, [location]);
 
   const handleScroll = () => {
     if (window.pageYOffset > 10) {
@@ -22,13 +40,17 @@ export default function Navbar() {
       setLogo(logo_blue);
       setNavListColor("var(--text-color)");
       setLogoTextColor("#138bc7");
-      setNavBack('transparent')
+      setNavBack("transparent");
+      changes()
     } else {
       navRef.current.classList.remove("scrolled");
       setLogo(logo_white);
       setNavListColor("var(--white)");
       setLogoTextColor("var(--white)");
-      setNavBack('linear-gradient(to left, var(--primary-color), var(--purple))')
+      setNavBack(
+        "linear-gradient(to left, var(--primary-color), var(--purple))"
+      );
+      changes()
     }
   };
 
@@ -51,90 +73,91 @@ export default function Navbar() {
 
   return (
     <>
-        <nav ref={navRef} className="nav">
-          <div className="nav__logo">
-            <Link to="/" className="dflex dflex-center">
-              <img
-                src={logo}
-                alt="logo"
-                className="logoImg"
-                id="logoImg"
-                style={{ height: "50px" }}
-              />
-              <h3 style={{ color: logoTextColor }}>SASA</h3>
-            </Link>
-          </div>
+      <nav ref={navRef} className="nav">
+        <div className="nav__logo">
+          <Link to="/" className="dflex dflex-center">
+            <img
+              src={logo}
+              alt="logo"
+              className="logoImg"
+              id="logoImg"
+              style={{ height: "50px" }}
+            />
+            <h3 style={{ color: logoTextColor }}>SASA</h3>
+          </Link>
+        </div>
 
-          <li className="menuToggle" onClick={toggleMenu}>
-            <Tooltip title="Menu" arrow>
-              <div
-                className="bar"
-                id="bar"
-                style={{ backgroundColor: navListColor }}
-              ></div>
-            </Tooltip>
+        <li className="menuToggle" onClick={toggleMenu}>
+          <Tooltip title="Menu" arrow>
+            <div
+              className="bar"
+              id="bar"
+              style={{ backgroundColor: navListColor }}
+            ></div>
+          </Tooltip>
+        </li>
+
+        <ul className="nav__links" data-dropdown>
+          <li className="nav_link active">
+            <NavLink style={navLinkStyle} to="/">
+              Home
+            </NavLink>
           </li>
-
-          <ul className="nav__links" data-dropdown>
-            <li className="nav_link active">
-              <NavLink style={navLinkStyle} to="/">
-                Home
-              </NavLink>
-            </li>
-            <li className="nav_link">
-              <NavLink style={navLinkStyle} to="/about">
-                About Us
-              </NavLink>
-            </li>
-            <li className="nav_link">
-              <NavLink style={navLinkStyle} to="/latestposts">
-                Latest Posts
-              </NavLink>
-            </li>
-            <li className="nav_link services">
-              <span
-                className="serviceSpan"
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "2px",
-                  color: navListColor,
-                }}
-              >
-                Services{" "}
-                <ExpandMoreIcon
-                  sx={{ color: "currentcolor", transform: "translateY(2px)" }}
-                  fontSize="small"
-                />
-              </span>
-              <ul className="services__dropdown">
-                <li className="dropdown_items">
-                  <Link to="services/drivinglicense">Driving License</Link>
-                </li>
-                <li className="dropdown_items">
-                  <Link to="services/passport">Passport Service</Link>
-                </li>
-                <li className="dropdown_items">
-                  <Link to="services/tuitionclasses">Tution Classes</Link>
-                </li>
-                <li className="dropdown_items">
-                  <Link to="services/onlineforms">Online Forms</Link>
-                </li>
-                <li className="dropdown_items">
-                  <Link to="/services">More</Link>
-                </li>
-              </ul>
-            </li>
-            <li className="nav_link">
-              <a style={{ color: navListColor }} role="link">
-                Company
-              </a>
-            </li>
-            <li className="nav_link contact">
-              <NavLink to="/contact">Contact</NavLink>
-            </li>
-          </ul>
-        </nav>
+          <li className="nav_link">
+            <NavLink style={navLinkStyle} to="/about">
+              About Us
+            </NavLink>
+          </li>
+          <li className="nav_link">
+            <NavLink style={navLinkStyle} to="/latestposts">
+              Latest Posts
+            </NavLink>
+          </li>
+          <li className="nav_link services">
+            <span
+              ref={serviceTabRef}
+              className="serviceSpan"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "2px",
+                color: navListColor,
+              }}
+            >
+              Services{" "}
+              <ExpandMoreIcon
+                sx={{ color: "currentcolor", transform: "translateY(2px)" }}
+                fontSize="small"
+              />
+            </span>
+            <ul className="services__dropdown">
+              <li className="dropdown_items" ref={service1}>
+                <Link to="services/drivinglicense">Driving License</Link>
+              </li>
+              <li className="dropdown_items" ref={service2}>
+                <Link to="services/passport">Passport Service</Link>
+              </li>
+              <li className="dropdown_items" ref={service3}>
+                <Link to="services/tuitionclasses">Tution Classes</Link>
+              </li>
+              <li className="dropdown_items" ref={service4}>
+                <Link to="services/onlineforms">Online Forms</Link>
+              </li>
+              <li className="dropdown_items" ref={moreBtnRef}>
+                <Link to="/services">More</Link>
+              </li>
+            </ul>
+          </li>
+          <li className="nav_link">
+            <a style={{ color: navListColor }} role="link">
+              Company
+            </a>
+          </li>
+          <li className="nav_link contact">
+            <NavLink to="/contact">Contact</NavLink>
+          </li>
+        </ul>
+      </nav>
     </>
   );
 }

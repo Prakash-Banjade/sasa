@@ -70,8 +70,7 @@ const Founders = () => {
             </div>
             </figure>
             <h3 className="text-center">Prakash Banjade</h3>
-            <p className="text-center">Bsc. CSI
-            T Student At <br />Butwal Multiple Campus</p>
+            <p className="text-center">Bsc. CSIT Student At <br />Butwal Multiple Campus</p>
             <div className="founder-contact dflex-center wrap gap-1">
                 <a href="https://www.facebook.com/prakash.banjade.5832/" target="_blank" rel="noopener noreferrer">
                 <FacebookOutlinedIcon />

@@ -1,31 +1,31 @@
 import React from "react";
+import HeroSectionTemplate from "../HeroSection_template";
+
 
 const LatestPosts = () => {
   const postContainerStyle = {
     maxWidth: "600px",
     margin: "2rem auto",
   };
+
+  const heroSectionContent = {
+    title: "Our Latest Posts",
+    description: `We are actively posting about our services and facilities on
+    Facebook. Posting about our services on Facebook is an effective way
+    for us to reach a wide audience and engage more customers. It helps
+    to build brand awareness and trust, increase website traffic, and
+    boost sales. By sharing useful and informative content, we can
+    demonstrate our expertise and show potential customers why they
+    should choose our services. Additionally, we can use Facebook Ads to
+    target specific audiences, allowing us to reach even more people
+    with our message.`,
+  };
   return (
     <>
-      <div className="heroSection dflex-center dflex-column gap-2">
-        <article
-          className="dflex-center dflex-column gap-2"
-          style={{ padding: "3rem 1rem", paddingTop: "5rem" }}
-        >
-          <h2 className="text-center">Our Latest Posts</h2>
-          <p className="text-center">
-            We are actively posting about our services and facilities on
-            Facebook. Posting about our services on Facebook is an effective way
-            for us to reach a wide audience and engage more customers. It helps
-            to build brand awareness and trust, increase website traffic, and
-            boost sales. By sharing useful and informative content, we can
-            demonstrate our expertise and show potential customers why they
-            should choose our services. Additionally, we can use Facebook Ads to
-            target specific audiences, allowing us to reach even more people
-            with our message.
-          </p>
-        </article>
-      </div>
+      <HeroSectionTemplate
+        title={heroSectionContent.title}
+        description={heroSectionContent.description}
+      />
 
       <div
         className="latestPosts-container container dflex-center dflex-column gap-2"
@@ -37,7 +37,7 @@ const LatestPosts = () => {
           height="419"
           style={{ border: "none", overflow: "hidden", width: "100%" }}
           scrolling="no"
-          frameborder="0"
+          frameBorder="0"
           allowfullscreen="true"
           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
         ></iframe>
@@ -47,7 +47,7 @@ const LatestPosts = () => {
           height="250"
           style={{ border: "none", overflow: "hidden", width: "100%" }}
           scrolling="no"
-          frameborder="0"
+          frameBorder="0"
           allowfullscreen="true"
           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
         ></iframe>
@@ -57,7 +57,7 @@ const LatestPosts = () => {
           height="498"
           style={{ border: "none", overflow: "hidden", width: "100%" }}
           scrolling="no"
-          frameborder="0"
+          frameBorder="0"
           allowfullscreen="true"
           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
         ></iframe>
@@ -67,7 +67,7 @@ const LatestPosts = () => {
           height="419"
           style={{ border: "none", overflow: "hidden", width: "100%" }}
           scrolling="no"
-          frameborder="0"
+          frameBorder="0"
           allowfullscreen="true"
           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
         ></iframe>
@@ -78,7 +78,7 @@ const LatestPosts = () => {
           style={{ border: "none", overflow: "hidden", width: "100%" }}
           scrolling="no"
           title="Latest FB post - Driving License"
-          frameborder="0"
+          frameBorder="0"
           allowfullscreen="true"
           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
           allowFullScreen="true"

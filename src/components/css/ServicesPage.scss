@@ -1,0 +1,283 @@
+.service-summary {
+  background: linear-gradient(to right, #e9f4fb, #e9e5f5);
+  padding-top: 6rem;
+  margin-top: -3rem;
+  & > * {
+    flex: 1 1 450px;
+  }
+
+  .left-content {
+    p {
+      font-size: 1rem;
+
+      strong {
+        font-weight: 500;
+      }
+
+      strong:not(.last) {
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  .right-content {
+    min-height: 400px;
+    
+    figure {
+        height: 450px;
+        width: 100%;
+        position: relative;
+
+      img {
+        width: 105px;
+        border-radius: 5px;
+        position: absolute;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+        &:first-child {
+          top: 14.5rem;
+          left: 17.5rem;
+          animation: animate_img1 20s ease-in-out infinite;
+        }
+
+        &:nth-child(2) {
+          top: 13rem;
+          left: 23rem;
+          animation: animate_img2 20s ease-in-out infinite;
+        }
+        &:nth-child(3) {
+          top: 12.5rem;
+          left: 6.5rem;
+          animation: animate_img3 20s ease-in-out infinite;
+        }
+        &:nth-child(4) {
+          top: 7.5rem;
+          left: 21rem;
+          animation: animate_img4 20s ease-in-out infinite;
+        }
+        &:nth-child(5) {
+          top: 8.5rem;
+          left: 13.6rem;
+          animation: animate_img5 20s ease-in-out infinite;
+        }
+        &:nth-child(6) {
+          top: 6rem;
+          left: 8.5rem;
+          animation: animate_img6 20s ease-in-out infinite;
+        }
+        &:last-child {
+          top: 16rem;
+          left: 10rem;
+          animation: animate_img7 20s ease-in-out infinite;
+        }
+      }
+    }
+  }
+}
+
+@keyframes animate_img1 {
+  0%,
+  100% {
+    top: 10.5rem;
+    left: 15.5rem;
+  }
+   20%{
+    top: 10.5rem;
+    left: 15.5rem;
+  }
+ 
+  25% {
+    top: 14.5rem;
+    left: 17.5rem;
+    
+    // transform: rotate(360deg);
+  }
+  70%{
+    top: 14.5rem;
+    left: 17.5rem;
+  }
+  75% {
+    top: 3.5rem;
+    left: 8.5rem;
+  }
+  95%{
+    top: 3.5rem;
+    left: 8.5rem;
+  }
+}
+@keyframes animate_img2 {
+  0%,
+  100% {
+    top: 10.5rem;
+    left: 15.5rem;
+  }
+   20%{
+    top: 10.5rem;
+    left: 15.5rem;
+  }
+  25% {
+    top: 13rem;
+    left: 23rem;
+    
+    // transform: rotate(-360deg);
+  }
+  70%{
+    top: 13rem;
+    left: 23rem;
+  }
+  75% {
+    top: 9rem;
+    left: 14rem;
+  }
+  95%{
+    top: 9rem;
+    left: 14rem;
+  }
+}
+@keyframes animate_img3 {
+  0%,
+  100% {
+    top: 10.5rem;
+    left: 15.5rem;
+  }
+   20%{
+    top: 10.5rem;
+    left: 15.5rem;
+  }
+  25% {
+    top: 12.5rem;
+    left: 6.5rem;
+    
+    // transform: rotate(360deg);
+  }
+  70%{
+    top: 12.5rem;
+    left: 6.5rem;
+  }
+  75% {
+    top: 7.5rem;
+    left: 21rem;
+  }
+  95%{
+    top: 7.5rem;
+    left: 21rem;
+  }
+}
+@keyframes animate_img4 {
+  0%,
+  100% {
+    top: 10.5rem;
+    left: 15.5rem;
+  }
+   20%{
+    top: 10.5rem;
+    left: 15.5rem;
+  }
+  25% {
+    top: 7.5rem;
+    left: 21rem;
+    
+    // transform: rotate(-360deg);
+  }
+  70%{
+    top: 7.5rem;
+    left: 21rem;
+  }
+  75% {
+    top: 16.5rem;
+    left: 10.5rem;
+  }
+  95%{
+    top: 16.5rem;
+    left: 10.5rem;
+  }
+}
+@keyframes animate_img5 {
+  0%,
+  100% {
+    top: 10.5rem;
+    left: 15.5rem;
+  }
+   20%{
+    top: 10.5rem;
+    left: 15.5rem;
+  }
+  25% {
+    top: 8.5rem;
+    left: 13.6rem;
+    
+    // transform: rotate(-360deg);
+  }
+  70%{
+    top: 8.5rem;
+    left: 13.6rem;
+  }
+  75% {
+    top: 13rem;
+    left: 23rem;
+  }
+  95%{
+    top: 13rem;
+    left: 23rem;
+  }
+}
+@keyframes animate_img6 {
+  0%,
+  100% {
+    top: 10.5rem;
+    left: 15.5rem;
+  }
+   20%{
+    top: 10.5rem;
+    left: 15.5rem;
+  }
+  25% {
+    top: 6rem;
+    left: 8.5rem;
+    
+    // transform: rotate(360deg);
+  }
+  70%{
+    top: 6rem;
+    left: 8.5rem;
+  }
+  75% {
+    top: 14.5rem;
+    left: 17.5rem;
+  }
+  95%{
+    top: 14.5rem;
+    left: 17.5rem;
+  }
+}
+@keyframes animate_img7 {
+  0%,
+  100% {
+    top: 10.5rem;
+    left: 15.5rem;
+  }
+   20%{
+    top: 10.5rem;
+    left: 15.5rem;
+  }
+  25% {
+    top: 16rem;
+    left: 10rem;
+    
+    // transform: rotate(-360deg);
+  }
+  70%{
+    top: 16rem;
+    left: 10rem;
+  }
+  75% {
+    top: 12.5rem;
+    left: 7rem;
+  }
+
+  95%{
+    top: 12.5rem;
+    left: 7rem;
+  }
+
+}

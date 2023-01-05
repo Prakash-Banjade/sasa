@@ -165,3 +165,7 @@ a.callNow-btn {
   display: grid;
   place-items: center;
 }
+
+button{
+  cursor: pointer;
+}

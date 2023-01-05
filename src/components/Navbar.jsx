@@ -21,18 +21,15 @@ export default function Navbar() {
   const [logoTextColor, setLogoTextColor] = useState("var(--white)");
 
   let location = useLocation();
-
-  const changes = ()=>{
-    serviceTabRef.current.style.color = location.pathname.includes("/services") ? "var(--primary-color)" : navListColor
-      service1.current.style.color = location.pathname === "/services/drivinglicense"? 'var(--primary-color)':'black'
-      service2.current.style.color = location.pathname === "/services/passport"? 'var(--primary-color)':'black'
-      service3.current.style.color = location.pathname === "/services/tuitionclasses"? 'var(--primary-color)':'black'
-      service4.current.style.color = location.pathname === "/services/onlineforms"? 'var(--primary-color)':'black'
-      moreBtnRef.current.style.display = location.pathname === '/services'? 'none' : 'block'
-  }
+  
   useEffect(() => {
-      changes()
-  }, [location]);
+    serviceTabRef.current.style.color = location.pathname.includes("/services") ? "var(--primary-color)" : navListColor
+    service1.current.style.color = location.pathname === "/services/drivinglicense"? 'var(--primary-color)':'black'
+    service2.current.style.color = location.pathname === "/services/passport"? 'var(--primary-color)':'black'
+    service3.current.style.color = location.pathname === "/services/tuitionclasses"? 'var(--primary-color)':'black'
+    service4.current.style.color = location.pathname === "/services/onlineforms"? 'var(--primary-color)':'black'
+    moreBtnRef.current.style.display = location.pathname === '/services'? 'none' : 'block'
+  }, [location, navListColor]);
 
   const handleScroll = () => {
     if (window.pageYOffset > 10) {
@@ -41,7 +38,6 @@ export default function Navbar() {
       setNavListColor("var(--text-color)");
       setLogoTextColor("#138bc7");
       setNavBack("transparent");
-      changes()
     } else {
       navRef.current.classList.remove("scrolled");
       setLogo(logo_white);
@@ -50,7 +46,6 @@ export default function Navbar() {
       setNavBack(
         "linear-gradient(to left, var(--primary-color), var(--purple))"
       );
-      changes()
     }
   };
 

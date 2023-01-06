@@ -25,14 +25,61 @@ nav.scrolled {
     height: 100%;
     display: flex;
     align-items: center;
-  }
 
-  & li.active {
-    color: var(--primary-color);
-  }
+    &.nav-tab a {
+      position: relative;
+      display: grid;
+      place-items: center;
 
-  & li.nav_link:not(.contact):hover {
-    color: var(--primary-color);
+      & .bottom-row {
+        background-color: currentColor;
+        height: 6px;
+        width: 6px;
+        transform: rotate(45deg);
+        display: none;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 2px;
+        background-color: currentColor;
+        bottom: 2px;
+        display: none;
+      }
+
+      &::before {
+        left: 0;
+        animation: increase 150ms linear;
+        transform-origin: right;
+      }
+
+      &::after {
+        right: 0; 
+        animation: increase 250ms linear;
+        transform-origin: left;
+      }
+
+      @keyframes increase {
+        from {
+          transform: scaleX(0);
+        }
+        to {
+          transform: scaleX(1);
+        }
+      }
+
+      &:hover .bottom-row,
+      &:hover::before,
+      &:hover::after,
+      &.active .bottom-row,
+      &.active::before,
+      &.active::after {
+        display: block;
+      }
+    }
   }
 
   & li.services {

@@ -1,5 +1,4 @@
 import React, { useContext, useState, useRef } from "react";
-import { Link } from "react-router-dom";
 import { NavBackContext } from "../../context/context";
 import "../css/TuitionClasses.scss";
 import cardImg1 from "../../assets/images/classes_category_1.jpg";
@@ -198,6 +197,7 @@ const Carousel = () => {
       </div>
     );
   };
+
   return (
     <div style={{ padding: "20px" }} className="slider-container">
       <Slider ref={sliderRef} {...settings}>
@@ -247,10 +247,10 @@ const TuitionClasses = () => {
       <section className="tuition_herosection">
         <h2>Want The Best Tuition Classes?</h2>
         <h3>You have come to the right place</h3>
-        <button>
-          <Link to="/contact">
+        <button onClick={()=>{
+          document.getElementById('tutors-section').scrollIntoView()
+        }}>
             Hire Our Best Tutors
-          </Link>
         </button>
       </section>
 
@@ -297,7 +297,7 @@ const TuitionClasses = () => {
         </div>
       </section>
 
-      <section className="teachers-container">
+      <section className="teachers-container" id="tutors-section">
         <h2 className="heading">Meet Our Best Tutors</h2>
         <Carousel />
       </section>

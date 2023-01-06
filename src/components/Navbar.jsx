@@ -11,24 +11,39 @@ export default function Navbar() {
   const navRef = useRef();
   const serviceTabRef = useRef();
   const service1 = useRef();
-  const service2 = useRef()
-  const service3 = useRef()
-  const service4 = useRef()
-  const moreBtnRef = useRef()
-  const { setNavBack } = useContext(NavBackContext);
+  const service2 = useRef();
+  const service3 = useRef();
+  const service4 = useRef();
+  const moreBtnRef = useRef();
+  const { setNavBack, navBackColor } = useContext(NavBackContext);
   const [logo, setLogo] = useState(logo_white);
   const [navListColor, setNavListColor] = useState("var(--white)");
   const [logoTextColor, setLogoTextColor] = useState("var(--white)");
 
   let location = useLocation();
-  
+
   useEffect(() => {
-    serviceTabRef.current.style.color = location.pathname.includes("/services") ? "var(--primary-color)" : navListColor
-    service1.current.style.color = location.pathname === "/services/drivinglicense"? 'var(--primary-color)':'black'
-    service2.current.style.color = location.pathname === "/services/passport"? 'var(--primary-color)':'black'
-    service3.current.style.color = location.pathname === "/services/tuitionclasses"? 'var(--primary-color)':'black'
-    service4.current.style.color = location.pathname === "/services/onlineforms"? 'var(--primary-color)':'black'
-    moreBtnRef.current.style.display = location.pathname === '/services'? 'none' : 'block'
+    serviceTabRef.current.style.color = location.pathname.includes("/services")
+      ? "var(--primary-color)"
+      : navListColor;
+    service1.current.style.color =
+      location.pathname === "/services/drivinglicense"
+        ? "var(--primary-color)"
+        : "black";
+    service2.current.style.color =
+      location.pathname === "/services/passport"
+        ? "var(--primary-color)"
+        : "black";
+    service3.current.style.color =
+      location.pathname === "/services/tuitionclasses"
+        ? "var(--primary-color)"
+        : "black";
+    service4.current.style.color =
+      location.pathname === "/services/onlineforms"
+        ? "var(--primary-color)"
+        : "black";
+    moreBtnRef.current.style.display =
+      location.pathname === "/services" ? "none" : "block";
   }, [location, navListColor]);
 
   const handleScroll = () => {
@@ -43,9 +58,7 @@ export default function Navbar() {
       setLogo(logo_white);
       setNavListColor("var(--white)");
       setLogoTextColor("var(--white)");
-      setNavBack(
-        "linear-gradient(to left, var(--primary-color), var(--purple))"
-      );
+      setNavBack(navBackColor);
     }
   };
 
@@ -64,6 +77,9 @@ export default function Navbar() {
 
   const navLinkStyle = ({ isActive }) => ({
     color: isActive ? "var(--primary-color)" : navListColor,
+    bottom_row: {
+      background: isActive ? "var(--primary-color)" : navListColor,
+    },
   });
 
   return (
@@ -93,19 +109,34 @@ export default function Navbar() {
         </li>
 
         <ul className="nav__links" data-dropdown>
-          <li className="nav_link active">
-            <NavLink style={navLinkStyle} to="/">
+          <li className="nav_link nav-tab active">
+            <NavLink
+              style={navLinkStyle}
+              className={({ isActive }) => (isActive ? "active" : undefined)}
+              to="/"
+            >
               Home
+              <div className="bottom-row" style={navLinkStyle.bottom_row}></div>
             </NavLink>
           </li>
-          <li className="nav_link">
-            <NavLink style={navLinkStyle} to="/about">
+          <li className="nav_link nav-tab">
+            <NavLink
+              style={navLinkStyle}
+              className={({ isActive }) => (isActive ? "active" : undefined)}
+              to="/about"
+            >
               About Us
+              <div className="bottom-row" style={navLinkStyle.bottom_row}></div>
             </NavLink>
           </li>
-          <li className="nav_link">
-            <NavLink style={navLinkStyle} to="/latestposts">
+          <li className="nav_link nav-tab">
+            <NavLink
+              style={navLinkStyle}
+              className={({ isActive }) => (isActive ? "active" : undefined)}
+              to="/latestposts"
+            >
               Latest Posts
+              <div className="bottom-row" style={navLinkStyle.bottom_row}></div>
             </NavLink>
           </li>
           <li className="nav_link services">

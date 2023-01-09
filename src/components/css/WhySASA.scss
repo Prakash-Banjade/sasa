@@ -1,9 +1,12 @@
 .why_sasa-container {
   gap: 5rem;
-  background-color: #f2f2f2;
+  // background-color: #f2f2f2;
 
   & > * {
     flex: 1 1 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   & .left-content {
@@ -26,9 +29,7 @@
       gap: 10px;
 
       & p {
-        font-size: 1rem;
         font-weight: 400;
-        line-height: 1.7rem;
 
         & span {
           font-weight: 500;
@@ -60,6 +61,8 @@
   }
 
   & .right-content {
+    // align-items: center;
+    padding-left: 5rem;
     & .title {
       font-family: var(--primary-font);
       color: var(--light-gray);
@@ -67,6 +70,7 @@
       position: relative;
       margin-left:1rem;
       margin-bottom: 1rem;
+      width: 100%;
 
       &::before {
         content: "";
@@ -103,7 +107,7 @@
     & li {
       position: relative;
       font-family: var(--text-font);
-      font-size: 0.9rem;
+      font-size: 1rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;

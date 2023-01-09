@@ -10,6 +10,7 @@ import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutli
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
+import { ThemeContext } from "../../context/context";
 
 import tutor1 from "../../assets/images/mishan.jpg";
 import tutor5 from "../../assets/images/prithvi.jpg";
@@ -86,7 +87,7 @@ const Carousel = () => {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: isPlaying,
     autoplaySpeed: 2000,
@@ -94,16 +95,15 @@ const Carousel = () => {
     focusOnSelect: true,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1224,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           infinite: true,
-          dots: true,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 900,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -198,6 +198,8 @@ const Carousel = () => {
     );
   };
 
+  const {dark} = useContext(ThemeContext)
+
   return (
     <div style={{ padding: "20px" }} className="slider-container">
       <Slider ref={sliderRef} {...settings}>
@@ -213,7 +215,7 @@ const Carousel = () => {
           />
         ))}
       </Slider>
-      <button className="btn-left" onClick={previous}>
+      <button style={{display: dark? 'none' : 'block'}} className="btn-left" onClick={previous}>
         <ArrowCircleLeftIcon
           sx={{
             fontSize: "3rem",
@@ -223,7 +225,7 @@ const Carousel = () => {
           }}
         />
       </button>
-      <button className="btn-right" onClick={next}>
+      <button style={{display: dark? 'none' : 'block'}} className="btn-right" onClick={next}>
         <ArrowCircleRightIcon
           sx={{
             fontSize: "3rem",

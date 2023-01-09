@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import Button from "@mui/material/Button";
 import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
 import "../css/About.scss";
 import Logo from "../../assets/images/logo.gif";
+import logo_white from "../../assets/images/logo-white.png"
 import { Link } from "react-router-dom";
+import {ThemeContext} from '../../context/context'
 
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const AboutMain = () => {
+  const {dark} = useContext(ThemeContext)
   AOS.init();
 
   return (
-    <div className="about-container container">
+    <div className="about-container container" style={{background: dark ? 'var(--primary-dark-light)': '#f2f2f2'}}>
       <div
         className="left-content dflex dflex-column gap-1"
         data-aos="fade-up"
@@ -22,7 +25,7 @@ const AboutMain = () => {
           <div className="rotatingBack">
             <div className="rotatingBackCircle grid-center"></div>
           </div>
-          <img src={Logo} alt="rounded sasa logo" title="Logo" />
+          <img src={dark? logo_white : Logo} alt="rounded sasa logo" title="Logo" />
         </figure>
         <h3>Make better Decisions With SASA Services</h3>
         <p>
@@ -51,7 +54,7 @@ const AboutMain = () => {
         <h4 className="dflex">
           <span></span>Who We Are
         </h4>
-        <h2 className="big-heading" style={{ maxWidth: "28ch" }}>
+        <h2 className="big-heading" style={{ maxWidth: "28ch"}}>
           We Are Most Advanced Agency In The Market
         </h2>
         <p>
@@ -68,11 +71,11 @@ const AboutMain = () => {
         </p>
         <div className="ticks firstTick dflex">
           <CheckCircleRoundedIcon color="primary" />
-          <span>Business Strategy and Marketing</span>
+          <span style={{color: dark? 'white' : 'black'}}>Business Strategy and Marketing</span>
         </div>
-        <div className="ticks">
-          <CheckCircleRoundedIcon color="primary" />{" "}
-          <span>Excellence In Everyting</span>
+        <div className="ticks dflex">
+          <CheckCircleRoundedIcon color="primary" />
+          <span style={{color: dark? 'white' : 'black'}}>Excellence In Everyting</span>
         </div>
 
         <Link to="/about">More About Us</Link>

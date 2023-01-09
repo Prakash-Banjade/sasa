@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
 import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
 import logo from "../assets/images/logo.gif";
 import './css/Footer.scss'
 import { NavLink } from "react-router-dom";
+import { ThemeContext } from "../context/context";
 
 const Footer = () => {
+  const {dark} = useContext(ThemeContext)
   return (
     <footer
       className="footer container dflex-center dflex-column"
       style={{ gap: "2rem", marginBottom: 0 }}
     >
+    <hr style={{background: dark? '#343a46' : '#ebecf0'}} />
       <NavLink to="/" className={() => "dflex dflex-center"}>
         <img
           src={logo}
@@ -20,20 +23,20 @@ const Footer = () => {
           id="logoImg"
           style={{ height: "50px" }}
         />
-        <h3 style={{ color: '#138bc7 '}}>SASA</h3>
+        <h3 style={{color: 'var(--primary-color)'}}>SASA</h3>
       </NavLink>
 
       <div className="social-icons dflex-center gap-1" >
-        <a href="https://www.facebook.com/profile.php?id=100087576614717" target="_blank" rel="noopener noreferrer" className="dflex-center">
-          <FacebookOutlinedIcon />
+        <a href="https://www.facebook.com/profile.php?id=100087576614717" target="_blank" rel="noopener noreferrer" style={{background: dark? 'var(--white)' : 'var(--text-color)'}} className="dflex-center">
+          <FacebookOutlinedIcon sx={{color: dark? 'var(--text-color)' : 'var(--white)'}} />
         </a>
 
-        <a href="mailto:group.sasa816@gmail.com" target="_blank" rel="noopener noreferrer" className="dflex-center">
-          <MailOutlineOutlinedIcon />
+        <a href="mailto:group.sasa816@gmail.com" target="_blank" rel="noopener noreferrer" style={{background: dark? 'var(--white)' : 'var(--text-color)'}} className="dflex-center">
+          <MailOutlineOutlinedIcon sx={{color: dark? 'var(--text-color)' : 'var(--white)'}} />
         </a>
 
-        <a href="tel:+9779800784971" target="_blank" rel="noopener noreferrer" className="dflex-center">
-          <LocalPhoneOutlinedIcon />
+        <a href="tel:+9779800784971" target="_blank" rel="noopener noreferrer" style={{background: dark? 'var(--white)' : 'var(--text-color)'}} className="dflex-center">
+          <LocalPhoneOutlinedIcon sx={{color: dark? 'var(--text-color)' : 'var(--white)'}} />
         </a>
       </div>
 

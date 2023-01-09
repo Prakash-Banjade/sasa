@@ -1,13 +1,18 @@
-import React, { useEffect, useRef, useState, useContext } from "react";
-import logo_white from "../assets/images/logo.png";
-import logo_blue from "../assets/images/logo.gif";
+import React, { useEffect, useRef, useContext, useMemo } from "react";
+import logo from "../assets/images/logo.gif";
 import "./css/Navbar.scss";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Tooltip } from "@mui/material";
 import { Link, NavLink, useLocation } from "react-router-dom";
+
+import Thumb from "./ThemeToggleThumb";
+
 import { NavBackContext } from "../context/context";
+import { ThemeContext } from "../context/context";
 
 export default function Navbar() {
+  const { dark } = useContext(ThemeContext);
+
   const navRef = useRef();
   const serviceTabRef = useRef();
   const service1 = useRef();
@@ -15,17 +20,17 @@ export default function Navbar() {
   const service3 = useRef();
   const service4 = useRef();
   const moreBtnRef = useRef();
+
   const { setNavBack, navBackColor } = useContext(NavBackContext);
-  const [logo, setLogo] = useState(logo_white);
-  const [navListColor, setNavListColor] = useState("var(--white)");
-  const [logoTextColor, setLogoTextColor] = useState("var(--white)");
 
   let location = useLocation();
 
   useEffect(() => {
     serviceTabRef.current.style.color = location.pathname.includes("/services")
       ? "var(--primary-color)"
-      : navListColor;
+      : dark
+      ? "var(--white)"
+      : "var(--text-color)";
     service1.current.style.color =
       location.pathname === "/services/drivinglicense"
         ? "var(--primary-color)"
@@ -44,20 +49,12 @@ export default function Navbar() {
         : "black";
     moreBtnRef.current.style.display =
       location.pathname === "/services" ? "none" : "block";
-  }, [location, navListColor]);
+  }, [location, dark]);
 
   const handleScroll = () => {
     if (window.pageYOffset > 10) {
-      navRef.current.classList.add("scrolled");
-      setLogo(logo_blue);
-      setNavListColor("var(--text-color)");
-      setLogoTextColor("#138bc7");
       setNavBack("transparent");
     } else {
-      navRef.current.classList.remove("scrolled");
-      setLogo(logo_white);
-      setNavListColor("var(--white)");
-      setLogoTextColor("var(--white)");
       setNavBack(navBackColor);
     }
   };
@@ -68,7 +65,8 @@ export default function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dark]);
 
   let toggleMenu = () => {
     document.querySelector(".nav__links").classList.toggle("active");
@@ -76,25 +74,34 @@ export default function Navbar() {
   };
 
   const navLinkStyle = ({ isActive }) => ({
-    color: isActive ? "var(--primary-color)" : navListColor,
-    bottom_row: {
-      background: isActive ? "var(--primary-color)" : navListColor,
-    },
+    color: isActive
+      ? "var(--primary-color)"
+      : dark
+      ? "var(--white)"
+      : "var(--text-color)",
   });
+
+  const navStyle = useMemo(() => {
+    return {
+      background: dark ? "#23272fee" : "rgb(250 250 250 / 0.9)",
+      boxShadow: "0 2px 10px rgb(0 0 0 / 0.1)",
+      backdropFilter: "blur(5px)",
+    };
+  }, [dark]);
 
   return (
     <>
-      <nav ref={navRef} className="nav">
-        <div className="nav__logo">
+      <nav ref={navRef} className="nav" style={navStyle}>
+        <div className="nav__logo dflex-center">
           <Link to="/" className="dflex dflex-center">
             <img
               src={logo}
               alt="logo"
               className="logoImg"
               id="logoImg"
-              style={{ height: "50px" }}
+              style={{ height: "40px" }}
             />
-            <h3 style={{ color: logoTextColor }}>SASA</h3>
+            <h1>SASA</h1>
           </Link>
         </div>
 
@@ -103,7 +110,7 @@ export default function Navbar() {
             <div
               className="bar"
               id="bar"
-              style={{ backgroundColor: navListColor }}
+              style={{ backgroundColor: dark? 'white' : '#404756' }}
             ></div>
           </Tooltip>
         </li>
@@ -147,7 +154,7 @@ export default function Navbar() {
                 display: "flex",
                 alignItems: "center",
                 gap: "2px",
-                color: navListColor,
+                color: dark ? "var(--white)" : "var(--text-color)",
               }}
             >
               Services{" "}
@@ -175,12 +182,15 @@ export default function Navbar() {
             </ul>
           </li>
           <li className="nav_link">
-            <a style={{ color: navListColor }} role="link">
+            <NavLink style={navLinkStyle} to="/company">
               Company
-            </a>
+            </NavLink>
           </li>
           <li className="nav_link contact">
             <NavLink to="/contact">Contact</NavLink>
+          </li>
+          <li className="nav_link">
+            <Thumb />
           </li>
         </ul>
       </nav>

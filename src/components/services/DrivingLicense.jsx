@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { NavBackContext } from "../../context/context";
 import "../css/DrivingLicense.scss";
 import heroImg from "../../assets/images/drivingLicense.png";
+import { ThemeContext } from "../../context/context";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -30,8 +31,10 @@ const HeroSection = (props) =>{
 }
 
 const DrivingLicense = () => {
+  
+  const {dark} = useContext(ThemeContext)
   AOS.init();
-  const { setNavBack, navBack } = useContext(NavBackContext);
+  const { navBack } = useContext(NavBackContext);
   return (
     <>
       <div className="dl_container">
@@ -57,14 +60,14 @@ const DrivingLicense = () => {
         </h4>
       </section>
 
-      <section className="license-features">
+      <section className="license-features" style={{background: dark? 'var(--dark-black)' : 'var(--white)' }}>
         <ol>
           <li className="feature1" data-aos="fade-down" data-aos-offset="300">
             <h2>
               
               Easy online form submission
             </h2>
-            <p>
+            <p className="feature-desc" style={{color: dark? 'var(--white)' : '#8b949e'}}>
               At our driving license agency, we make it easy for you to fill out
               the online driving license form. Our user-friendly platform is
               designed to streamline the application process, allowing you to
@@ -85,7 +88,7 @@ const DrivingLicense = () => {
               
               Any Category Vehicle
             </h2>
-            <p>
+            <p className="feature-desc" style={{color: dark? 'var(--white)' : '#8b949e'}}>
               We help you get the driving licenses for all categories of
               vehicles. This includes cars, trucks, motorcycles, buses, and any
               other type of motor vehicle. Our team of experienced professionals
@@ -104,7 +107,7 @@ const DrivingLicense = () => {
           <li className="feature3" data-aos="fade-down" data-aos-offset="300">
             
             <h2>Easy category addition and re-tiral form submission</h2>
-            <p>
+            <p className="feature-desc" style={{color: dark? 'var(--white)' : '#8b949e'}}>
               We assist you with the process of adding or retiring a vehicle
               category on your license. Whether you're looking to add a
               motorcycle endorsement or retire a commercial driver's license, we
@@ -123,7 +126,7 @@ const DrivingLicense = () => {
           <li className="feature4" data-aos="fade-down" data-aos-offset="300">
             
             <h2>Suggestions in each steps: biometrics, written exam, trial</h2>
-            <p>
+            <p className="feature-desc" style={{color: dark? 'var(--white)' : '#8b949e'}}>
               We help you take the necessary biometrics, written exam, and road
               test. Our team of professionals is here to guide you through each
               step of the process, ensuring that you have the knowledge and
@@ -141,7 +144,7 @@ const DrivingLicense = () => {
           <li className="feature5" data-aos="fade-down" data-aos-offset="280">
             
             <h2>100% guarantee license within a month</h2>
-            <p>
+            <p className="feature-desc" style={{color: dark? 'var(--white)' : '#8b949e'}}>
               We are committed to helping you get your driving license in a
               timely manner. In fact, we guarantee that you will receive your
               license within a month of starting the process. Our team of

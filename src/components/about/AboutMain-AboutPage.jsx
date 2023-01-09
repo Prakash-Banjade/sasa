@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../css/About.scss";
 import Logo from "../../assets/images/logo.gif";
+import logo_white from "../../assets/images/logo-white.png";
+import { ThemeContext } from "../../context/context";
 
 const AboutMainAboutPage = () => {
+  const {dark} = useContext(ThemeContext)
   return (
-    <div className="about-container container" style={{ background: "white" }}>
+    <div className="about-container container" >
       <div className="left-content dflex-center">
-        <figure className="grid-center" style={{margin: 0}}>
+        <figure className="grid-center" style={{ margin: 0 }}>
           <div className="rotatingBack">
             <div className="rotatingBackCircle grid-center"></div>
           </div>
-          <img src={Logo} alt="rounded sasa logo" title="Logo" />
+          <img src={dark? logo_white : Logo} alt="rounded sasa logo" title="Logo" />
         </figure>
       </div>
 

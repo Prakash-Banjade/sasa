@@ -134,6 +134,10 @@
     top: 100% !important;
   }
 
+  .why_sasa-container .right-content{
+    padding: 10px !important;
+  }
+
 }
 
 @media screen and (max-width: 500px) {

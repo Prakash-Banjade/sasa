@@ -1,11 +1,15 @@
 .footer{
-    background-color: #021017;
+
+    hr{
+        height: 1px;
+        width: 85%;
+        border: none;
+    }
 
     & .social-icons{
         & a{
             height: 50px;
             width: 50px;
-            background-color: #fff;
             border-radius: 50%;
             border: #eee;
         }

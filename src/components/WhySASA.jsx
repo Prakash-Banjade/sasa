@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./css/WhySASA.scss";
+import {ThemeContext} from '../context/context'
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const WhySASA = () => {
   AOS.init();
+  
+  const {dark} = useContext(ThemeContext)
   return (
     <div className="why_sasa-container container dflex wrap">
       <div className="left-content" data-aos="zoom-in-up" >
@@ -40,12 +43,12 @@ const WhySASA = () => {
       <div className="right-content" data-aos="zoom-in-up">
         <div className="title">Our Top Notch Qualities</div>
         <ol className="dflex dflex-column gap-1">
-          <li>Open and honest communication</li>
-          <li>Commitment to customer service</li>
-          <li>Solid track record of successful performance</li>
-          <li>Commitment to ethical business practices</li>
-          <li>Solid financial status</li>
-          <li>Commitment to employee training and development</li>
+          <li style={{color: dark? 'var(--white)' : 'black'}}>Open and honest communication</li>
+          <li style={{color: dark? 'var(--white)' : 'black'}}>Commitment to customer service</li>
+          <li style={{color: dark? 'var(--white)' : 'black'}}>Solid track record of successful performance</li>
+          <li style={{color: dark? 'var(--white)' : 'black'}}>Commitment to ethical business practices</li>
+          <li style={{color: dark? 'var(--white)' : 'black'}}>Solid financial status</li>
+          <li style={{color: dark? 'var(--white)' : 'black'}}>Commitment to employee training and development</li>
         </ol>
       </div>
     </div>

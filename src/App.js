@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import { Routes, Route, useLocation } from "react-router-dom";
 import HomePage from "./components/routes/HomePage";
 import AboutUsPage from "./components/routes/AboutUsPage";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import LatestPosts from "./components/routes/LatestPosts";
 import AlertMessage from "./components/Alert";
 import Contact from "./components/routes/Contact";
@@ -17,18 +17,42 @@ import ComputerClasses from "./components/services/ComputerClasses";
 import ShareMarket from "./components/services/ShareMarket";
 import Webdesigning from "./components/services/Webdesigning";
 import NotFound from "./components/NotFound";
-
-
-
+import Company from "./components/routes/Company";
+import { ThemeContext } from "./context/context";
 
 function App() {
+  const { dark } = useContext(ThemeContext);
   let currLocation = useLocation();
 
   useEffect(() => {
     document.querySelector(".nav__links").classList.remove("active");
     document.getElementById("bar").classList.remove("toggled");
     window.scrollTo(0, 0);
-  }, [currLocation]);
+
+    let paragraph = document.getElementsByTagName("p");
+    let constantPara = ["customer-name", "hero-content", "message", 'feature-desc'];
+    Array.from(paragraph).forEach((p) => {
+      if (constantPara.some((className) => p.classList.contains(className)))
+        return;
+      p.style.color = dark ? "var(--white)" : "var(--text-color)";
+    });
+
+    let bigHeadings = Array.from(
+      document.getElementsByClassName("big-heading")
+    );
+    let headings = Array.from(document.getElementsByTagName("h3"));
+    let headingArray = [...bigHeadings, ...headings];
+    headingArray.forEach((heading) => {
+      if (heading.classList.contains("logo-text")) return;
+      heading.style.color = dark
+        ? "var(--primary-color-dark)"
+        : "var(--heading-color)";
+    });
+  }, [currLocation, dark]);
+
+  document.getElementById("root").style.backgroundColor = dark
+    ? "var(--primary-dark)"
+    : "white";
 
   return (
     <>
@@ -50,8 +74,9 @@ function App() {
           <Route path="webdesigning" element={<Webdesigning />} />
           <Route path="computerclasses" element={<ComputerClasses />} />
         </Route>
-        
-        <Route end path="/contact" element={<Contact />} />
+
+        <Route path="/company" element={<Company />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 

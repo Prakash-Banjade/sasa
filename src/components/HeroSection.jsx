@@ -1,15 +1,19 @@
+import React, { useContext } from "react";
 import { Typography, Button } from "@mui/material";
-import React from "react";
 import { Link } from "react-router-dom";
-import "./css/HeroSection.scss";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import LocalPhoneRoundedIcon from "@mui/icons-material/LocalPhoneRounded";
 
+import "./css/HeroSection.scss";
+import { ThemeContext } from "../context/context";
+
 export default function HeroSection() {
+  const {dark} = useContext(ThemeContext)
+
   return (
     <>
-      <div className="hero-container dflex wrap gap-2">
+      <div className={`hero-container dflex wrap gap-2 ${dark? 'dark' : 'light'}`}>
         <div className="left-content dflex dflex-column">
           <div className="hero-content-heading dflex wrap">
             <Typography
@@ -43,9 +47,10 @@ export default function HeroSection() {
                 margin: "20px auto",
                 lineHeight: "2rem",
                 fontWeight: 400,
-                fontSize: "1rem",
-                color: "var(--white)",
+                color: 'var(--white)'
               }}
+
+              className="hero-content"
             >
               Driving लाइसेन्स देखि लिएर राहदानी (passport) सम्म बनाउन
               चाहनुहुन्छ भने SASA लाई सम्झनुहोस। हामी उचित मूल्यमा विभिन्न
@@ -73,7 +78,6 @@ export default function HeroSection() {
             <Button
               className="hero-button"
               variant="outlined"
-              href="/"
               sx={{
                 boxShadow: "0 4px 10px rgb(0 0 0 / .2)",
                 backgroundColor: "white",

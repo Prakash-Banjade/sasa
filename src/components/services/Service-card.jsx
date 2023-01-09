@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+import { ThemeContext } from "../../context/context";
 
 const ServiceCard = (props) => {
+  const {dark} = useContext(ThemeContext)
   return (
-    <div className="service-card dflex dflex-column gap-1">
+    <div className="service-card dflex dflex-column gap-1" style={{background: dark? 'var(--primary-background)' : 'var(--service-card-color)'}}>
       <h3 className="heading-title">{props.title}</h3>
 
       <p className="description">{props.description}</p>
@@ -12,11 +14,11 @@ const ServiceCard = (props) => {
       <Button
         sx={{
           background: "rgb(30 144 255 / .1)",
-          color: "#787878",
+          color: dark? 'var(--white)' : "#787878",
           "&:hover": {
             backgroundColor: "rgb(30 144 255 / .5)",
             boxShadow: "none",
-            color: "#454545",
+            color: dark? 'white' : "#454545",
           },
         }}
         variant="contained"

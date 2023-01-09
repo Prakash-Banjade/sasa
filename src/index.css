@@ -18,6 +18,12 @@
   --light-gray: #808080;
   --purple: #9c27b0;
   --white: #edf8ff;
+  --primary-background: #283541;
+
+  --primary-dark: #23272f;
+  --primary-dark-light: #343a46;
+  --primary-color-dark: #149eca;
+  --dark-black: #16181d;
 }
 
 html {
@@ -85,22 +91,19 @@ h2.heading::before {
 
 h2.big-heading{
   font-family: var(--primary-font);
-  color: var(--heading-color);
   font-size: 2rem;
 }
 
 h3 {
   font-family: var(--primary-font);
-  color: var(--heading-color);
   font-size: 1.6rem;
 }
 
 p {
   font-family: var(--text-font);
-  color: var(--text-color);
   font-weight: 300;
-  line-height: 1.5rem;
-  font-size: 0.9rem;
+  line-height: 1.9rem;
+  font-size: 1.1rem;
 }
 li.tag-list {
   position: relative;

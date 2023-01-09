@@ -1,10 +1,12 @@
-import React from "react";
-import contactImg from "../../assets/images/contactImg.jpg";
+import React, { useContext } from "react";
+import contactImg from "../../assets/images/contactImg.png";
 import "../css/Contact.scss";
 import { Button } from "@mui/material";
 import HeroSectionTemplate from "../HeroSection_template";
+import { ThemeContext } from "../../context/context";
 
 const Contact = () => {
+  const {dark} = useContext(ThemeContext)
   const heroSectionContent = {
     title: 'Contact Us',
     description: `We value all of our customers and thank you for your continued
@@ -23,7 +25,7 @@ const Contact = () => {
 
         <div className="right-content">
           <h3>Have any question or suggestions?</h3>
-          <small style={{ fontFamily: "var(--text-font)", maxWidth: "20ch" }}>
+          <small style={{ fontFamily: "var(--text-font)", maxWidth: "20ch", color: dark? 'var(--white)' : 'black' }}>
             We ensure your privacy is maintained. Feel free to ask any thing
             about SASA and its services.
           </small>
@@ -34,37 +36,38 @@ const Contact = () => {
             className="dflex dflex wrap gap-1"
           >
             <div className="name-field">
-              <label htmlFor="name">
+              <label style={{color: dark? 'var(--white)' : 'var(--text-color)'}} htmlFor="name">
                 Your Name<span style={{fontSize: '13px'}}><sup>(Required)</sup></span>
               </label>
-              <input type="text"  id="name" name="Name" minLength={3} required autoComplete="off" />
+              <input style={{background: dark? 'white' : '#ddd'}} type="text"  id="name" name="Name" minLength={3} required autoComplete="off" />
             </div>
 
             <div className="email-field">
-              <label htmlFor="name">
+              <label style={{color: dark? 'var(--white)' : 'var(--text-color)'}} htmlFor="name">
                 Your Email<span style={{fontSize: '13px'}}><sup>(Required)</sup></span>
                  
               </label>
-              <input type="email" placeholder="abc@gmail.com" id="email" name="E-mail" required autoComplete="off" />
+              <input style={{background: dark? 'white' : '#ddd'}} type="email" placeholder="abc@gmail.com" id="email" name="E-mail" required autoComplete="off" />
             </div>
 
             <div className="phone-field">
-              <label htmlFor="phNumber">
+              <label style={{color: dark? 'var(--white)' : 'var(--text-color)'}} htmlFor="phNumber">
                 Your Phone no. (+ country code)<span style={{fontSize: '13px'}}><sup>(Required)</sup></span>
               </label>
-              <input pattern="^\+[1-9]{1}[0-9]{3,14}$" id="phNumber" placeholder="+97798..." name="Phone" required autoComplete="off" />
+              <input style={{background: dark? 'white' : '#ddd'}} pattern="^\+[1-9]{1}[0-9]{3,14}$" id="phNumber" placeholder="+97798..." name="Phone" required autoComplete="off" />
             </div>
 
             <div className="subject-field">
-              <label htmlFor="name">Subject</label>
-              <input type="text" minLength={10} autoComplete="off" />
+              <label style={{color: dark? 'var(--white)' : 'var(--text-color)'}} htmlFor="name">Subject</label>
+              <input style={{background: dark? 'white' : '#ddd'}} type="text" minLength={10} autoComplete="off" />
             </div>
 
             <div className="message-field">
-              <label htmlFor="message">
+              <label style={{color: dark? 'var(--white)' : 'var(--text-color)'}} htmlFor="message">
                 Message<span style={{fontSize: '13px'}}><sup>(Required)</sup></span>
               </label>
               <textarea
+              style={{background: dark? 'white' : '#ddd'}}
                 rows="4"
                 id="message"
                 minLength={20}

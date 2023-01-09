@@ -23,7 +23,6 @@
     box-shadow: 0 2px 10px rgb(0 0 0 / 0.3);
 
     span {
-      // color: var(--purple);
       font-weight: 500;
       text-decoration: underline;
       font-size: 1.1rem;
@@ -32,7 +31,6 @@
 }
 
 .license-features {
-  background-color: var(--white);
   padding: 10px 1.5rem;
   max-width: 1200px;
   margin: auto;
@@ -154,7 +152,7 @@
   ol {
     span {
       margin-left: -.8rem;
-      color: #0d1117;
+      color: var(--dark-black);
       transform: translateX(-10px);
       height: 50px;
       width: 50px;
@@ -351,7 +349,7 @@
 }
 
 @media screen and (max-width: 1250px) {
-  .left-content {
+  .service-herosection .left-content {
     padding-top: 5rem;
   }
 }

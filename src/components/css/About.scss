@@ -59,6 +59,7 @@
         var(--primary-color)
       );
       background-clip: text;
+      text-shadow: 0 5px 10px rgb(0 0 0 / 20%);
       color: transparent;
       max-width: 26ch;
     }

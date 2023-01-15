@@ -66,7 +66,7 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dark]);
+  }, []);
 
   let toggleMenu = () => {
     document.querySelector(".nav__links").classList.toggle("active");
@@ -115,7 +115,7 @@ export default function Navbar() {
           </Tooltip>
         </li>
 
-        <ul className="nav__links" data-dropdown>
+        <ul className={`nav__links menuDropDown ${dark ? 'dark' : 'light'}`} >
           <li className="nav_link nav-tab active">
             <NavLink
               style={navLinkStyle}
@@ -181,9 +181,10 @@ export default function Navbar() {
               </li>
             </ul>
           </li>
-          <li className="nav_link">
+          <li className="nav_link nav-tab">
             <NavLink style={navLinkStyle} to="/company">
               Company
+              <div className="bottom-row" style={navLinkStyle.bottom_row}></div>
             </NavLink>
           </li>
           <li className="nav_link contact">

@@ -18,7 +18,8 @@
   --light-gray: #808080;
   --purple: #9c27b0;
   --white: #edf8ff;
-  --primary-background: #283541;
+  --primary-background-dark1: #283541;
+  --primary-background-dark2: #343a46;
 
   --primary-dark: #23272f;
   --primary-dark-light: #343a46;
@@ -94,16 +95,40 @@ h2.big-heading{
   font-size: 2rem;
 }
 
+h2.big-heading.light{
+  color: var(--heading-color);
+}
+
+h2.big-heading.dark{
+  color: #8891ec;
+}
+
 h3 {
   font-family: var(--primary-font);
   font-size: 1.6rem;
+}
+
+h3.light, h3.text-center.light{
+  color: var(--heading-color);
+}
+
+h3.dark, h3.text-center.dark{
+  color: var(--primary-color-dark);
 }
 
 p {
   font-family: var(--text-font);
   font-weight: 300;
   line-height: 1.9rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
+}
+
+p.light{
+  color: var(--text-color);
+}
+
+p.dark{
+  color: var(--white);
 }
 li.tag-list {
   position: relative;

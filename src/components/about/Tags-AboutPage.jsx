@@ -6,7 +6,7 @@ const TagsAboutPage = () => {
   const { dark } = useContext(ThemeContext);
     const tagStyle={
         borderRadius: '5px',
-        backgroundColor: dark? 'var(--primary-background)' : 'var(--service-card-color)',
+        backgroundColor: dark? 'var(--primary-background-dark2)' : 'var(--service-card-color)',
         padding: '1rem',
         textAlign: 'center', 
         minWidth: '200px',

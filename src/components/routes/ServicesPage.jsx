@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import HeroSectionTemplate from "../HeroSection_template";
 import "../css/ServicesPage.scss";
+import { ThemeContext } from "../../context/context";
 
 import img1 from "../../assets/images/servicesImg/img_books.png";
 import img2 from "../../assets/images/servicesImg/img_computer.png";
@@ -15,6 +16,14 @@ import img9 from "../../assets/images/servicesImg/img_loksewa.png";
 import img10 from "../../assets/images/servicesImg/img_edv.png";
 
 const ServicesPage = () => {
+  const { dark } = useContext(ThemeContext);
+
+  useEffect(() => {
+    let summary = document.getElementById("summary");
+    summary.classList.add(dark ? "dark" : "light");
+    summary.classList.remove(dark ? "light" : "dark");
+  }, [dark]);
+
   const heroSectionContent = {
     title: "Our Services",
     description:
@@ -107,16 +116,19 @@ const ServicesPage = () => {
             style={{ display: props.img !== "" ? "block" : "none" }}
           />
         </figure>
-        <h3 className="text-center">{props.title}</h3>
+        <h3 className={`text-center ${dark? 'dark' : 'light'}`}>{props.title}</h3>
         <p className="text-center">{props.description}</p>
-        <button>
+        <button style={{background: dark? '#252943' : 'rgb(128 0 128 / 0.3)', color: dark? '#6e91ec' : 'var(--purple)'}}>
           <Link to={props.link}>Explore</Link>
         </button>
       </div>
     );
   };
 
-  const [serviceCategory, setServiceCategory] = useState([...regularServices, ...seasonalServices]);
+  const [serviceCategory, setServiceCategory] = useState([
+    ...regularServices,
+    ...seasonalServices,
+  ]);
 
   const handleBtnClick = (e) => {
     switch (e.target.id) {
@@ -140,11 +152,13 @@ const ServicesPage = () => {
         setServiceCategory([...regularServices, ...seasonalServices]);
     }
 
-    Array.from(document.getElementsByClassName('service-action-btn')).forEach(btn => {
-      btn.classList.remove('active')
-    })
+    Array.from(document.getElementsByClassName("service-action-btn")).forEach(
+      (btn) => {
+        btn.classList.remove("active");
+      }
+    );
 
-    e.target.classList.add('active')
+    e.target.classList.add("active");
   };
 
   const servicesImg = [img1, img2, img3, img4, img5, img6, img7];
@@ -156,7 +170,10 @@ const ServicesPage = () => {
           description={heroSectionContent.description}
         />
 
-        <section className="service-summary container dflex gap-3 wrap">
+        <section
+          className="service-summary container dflex gap-3 wrap"
+          id="summary"
+        >
           <div className="left-content dflex dflex-column gap-2">
             <h2 className="big-heading">Quick Overview</h2>
             <p>

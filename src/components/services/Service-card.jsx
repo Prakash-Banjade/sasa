@@ -6,7 +6,7 @@ import { ThemeContext } from "../../context/context";
 const ServiceCard = (props) => {
   const {dark} = useContext(ThemeContext)
   return (
-    <div className="service-card dflex dflex-column gap-1" style={{background: dark? 'var(--primary-background)' : 'var(--service-card-color)'}}>
+    <div className="service-card dflex dflex-column gap-1" style={{background: dark? 'var(--primary-background-dark1)' : 'var(--service-card-color)'}}>
       <h3 className="heading-title">{props.title}</h3>
 
       <p className="description">{props.description}</p>

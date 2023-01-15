@@ -23,7 +23,7 @@ const Footer = () => {
           id="logoImg"
           style={{ height: "50px" }}
         />
-        <h3 style={{color: 'var(--primary-color)'}}>SASA</h3>
+        <h3 style={{color: 'var(--primary-color)'}} className="logo-text">SASA</h3>
       </NavLink>
 
       <div className="social-icons dflex-center gap-1" >

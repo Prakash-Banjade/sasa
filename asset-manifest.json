@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/sasa/static/css/main.2865cf12.css",
-    "main.js": "/sasa/static/js/main.46bc8900.js",
+    "main.css": "/sasa/static/css/main.539f346d.css",
+    "main.js": "/sasa/static/js/main.1e90249c.js",
     "static/media/heroSection-background.webp": "/sasa/static/media/heroSection-background.59fce21ef772ea0308a1.webp",
     "static/media/img_computer.png": "/sasa/static/media/img_computer.4d02eee7bb4e77a66c9b.png",
     "static/media/tuitionClassesHeroImg.png": "/sasa/static/media/tuitionClassesHeroImg.fde5fef429583519b08f.png",
     "static/media/prithvi.jpg": "/sasa/static/media/prithvi.569ef3fd5e5e5be22df2.jpg",
-    "static/media/contactImg.jpg": "/sasa/static/media/contactImg.054113888b5754a7ec41.jpg",
     "static/media/sanjay.png": "/sasa/static/media/sanjay.0b3ae716f1528661fc2b.png",
     "static/media/img_ukWork.jpg": "/sasa/static/media/img_ukWork.fdd07e2e99ce9cb5f7b2.jpg",
     "static/media/img_loksewa.png": "/sasa/static/media/img_loksewa.69b3886f632611bb8d3e.png",
     "static/media/founder_2.jpg": "/sasa/static/media/founder_2.f3c8f8647929e5c7350b.jpg",
+    "static/media/contactImg.png": "/sasa/static/media/contactImg.509cb60c6c59cdad0c0b.png",
     "static/media/img_sharemarket.png": "/sasa/static/media/img_sharemarket.32fd7066ef32729309f7.png",
     "static/media/classes_category_2.jpg": "/sasa/static/media/classes_category_2.8624e8e919fc75cf4607.jpg",
     "static/media/classes_category_3.jpg": "/sasa/static/media/classes_category_3.bac64f67bc8ea264c415.jpg",
@@ -23,17 +23,17 @@
     "static/media/img_forms.png": "/sasa/static/media/img_forms.8569153b7de695e3526a.png",
     "static/media/patel.jpg": "/sasa/static/media/patel.a71b1a722d91bd757c20.jpg",
     "static/media/img_license.png": "/sasa/static/media/img_license.367540d7d40154e71cc1.png",
-    "static/media/logo.png": "/sasa/static/media/logo.2287eefd1bede9855ee8.png",
+    "static/media/logo-white.png": "/sasa/static/media/logo-white.6ec62b02db7e2ebfd7ee.png",
     "index.html": "/sasa/index.html",
     "static/media/slick.svg": "/sasa/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/sasa/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/sasa/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/sasa/static/media/slick.295183786cd8a1389865.woff",
-    "main.2865cf12.css.map": "/sasa/static/css/main.2865cf12.css.map",
-    "main.46bc8900.js.map": "/sasa/static/js/main.46bc8900.js.map"
+    "main.539f346d.css.map": "/sasa/static/css/main.539f346d.css.map",
+    "main.1e90249c.js.map": "/sasa/static/js/main.1e90249c.js.map"
   },
   "entrypoints": [
-    "static/css/main.2865cf12.css",
-    "static/js/main.46bc8900.js"
+    "static/css/main.539f346d.css",
+    "static/js/main.1e90249c.js"
   ]
 }

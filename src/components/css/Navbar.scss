@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
-  height: 70px;
+  height: 50px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -10,20 +10,17 @@
   transition: background-color 150ms ease;
   background-color: transparent;
 
-  .nav__logo{
-    a h1{
+  .nav__logo {
+    a h1 {
       color: #138bc7;
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       font-weight: 500;
       font-family: var(--primary-font);
     }
   }
 }
 
-
-
 .nav__links {
-
   & li {
     transition: 0.2s ease;
     height: 100%;
@@ -61,7 +58,7 @@
       }
 
       &::after {
-        right: 0; 
+        right: 0;
         animation: increase 250ms linear;
         transform-origin: left;
       }
@@ -89,12 +86,24 @@
   & li.services {
     position: relative;
 
+    span {
+      .dropDownIcon {
+        display: flex;
+        align-items: center;
+        transition: transform 150ms linear;
+        transform-origin: center;
+      }
+    }
+
+    &:hover span .dropDownIcon {
+      transform: rotate(180deg);
+    }
+
     & .services__dropdown {
       padding: 5px 10px;
       border-radius: 5px;
       box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
       border: 1px solid #ccc;
-      background-color: white;
       position: absolute;
       top: 80%;
       width: 180px;
@@ -104,16 +113,27 @@
       transition: opacity 0.2s ease-out, transform 0.15s ease-in-out;
       z-index: 10;
 
+      &.light {
+        background-color: white;
+        border: 1px solid #ebecf0;
+        color: var(--text-color);
+      }
+
+      &.dark {
+        background-color: var(--primary-dark);
+        border: 1px solid #343a46;
+        color: var(--white);
+      }
+
       & li {
-        color: black;
         list-style-type: none;
         padding: 5px;
       }
 
       & a {
         &:hover {
+          color: var(--purple) !important;
           transition: 0.2s ease-in-out;
-          color: var(--purple);
           transform: translateX(2px);
         }
       }
@@ -129,12 +149,11 @@
   }
 
   & li.contact a {
-    padding: 5px 10px;
+    padding: 3px 18px;
     border: 2px solid var(--purple);
     color: white;
     background-color: var(--purple);
-    border-radius: 5px;
-    font-weight: 600;
+    border-radius: 25px;
     letter-spacing: 1px;
   }
 }

@@ -140,7 +140,7 @@ export default function HeroSection() {
         </div>
 
         <div className="right-content grid-center">
-          <div className="stack"></div>
+          <div className="stack" style={{backgroundColor: dark? 'var(--primary-dark-light)' : 'var(--purple)'}}></div>
         </div>
       </div>
     </>

@@ -7,7 +7,6 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 
 import Thumb from "./ThemeToggleThumb";
 
-import { NavBackContext } from "../context/context";
 import { ThemeContext } from "../context/context";
 
 export default function Navbar() {
@@ -15,13 +14,8 @@ export default function Navbar() {
 
   const navRef = useRef();
   const serviceTabRef = useRef();
-  const service1 = useRef();
-  const service2 = useRef();
-  const service3 = useRef();
-  const service4 = useRef();
   const moreBtnRef = useRef();
 
-  const { setNavBack, navBackColor } = useContext(NavBackContext);
 
   let location = useLocation();
 
@@ -31,42 +25,11 @@ export default function Navbar() {
       : dark
       ? "var(--white)"
       : "var(--text-color)";
-    service1.current.style.color =
-      location.pathname === "/services/drivinglicense"
-        ? "var(--primary-color)"
-        : "black";
-    service2.current.style.color =
-      location.pathname === "/services/passport"
-        ? "var(--primary-color)"
-        : "black";
-    service3.current.style.color =
-      location.pathname === "/services/tuitionclasses"
-        ? "var(--primary-color)"
-        : "black";
-    service4.current.style.color =
-      location.pathname === "/services/onlineforms"
-        ? "var(--primary-color)"
-        : "black";
     moreBtnRef.current.style.display =
       location.pathname === "/services" ? "none" : "block";
   }, [location, dark]);
 
-  const handleScroll = () => {
-    if (window.pageYOffset > 10) {
-      setNavBack("transparent");
-    } else {
-      setNavBack(navBackColor);
-    }
-  };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   let toggleMenu = () => {
     document.querySelector(".nav__links").classList.toggle("active");
@@ -83,11 +46,19 @@ export default function Navbar() {
 
   const navStyle = useMemo(() => {
     return {
-      background: dark ? "#23272fee" : "rgb(250 250 250 / 0.9)",
-      boxShadow: "0 2px 10px rgb(0 0 0 / 0.1)",
-      backdropFilter: "blur(5px)",
+      background: dark ? "transparent" : "rgb(250 250 250 / 0.9)",
+      borderBottom: `1px solid ${dark?  '#343a46' : '#ebecf0'}`,
+      backdropFilter: "blur(30px) drop-shadow(4px 4px 10px blue) saturate(150%)",
     };
   }, [dark]);
+
+  const dropDownItemStyle = ({ isActive }) => ({
+    color: isActive
+      ? "var(--primary-color)"
+      : dark
+      ? "var(--white)"
+      : "var(--text-color)",
+  });
 
   return (
     <>
@@ -99,7 +70,7 @@ export default function Navbar() {
               alt="logo"
               className="logoImg"
               id="logoImg"
-              style={{ height: "40px" }}
+              style={{ height: "30px" }}
             />
             <h1>SASA</h1>
           </Link>
@@ -158,26 +129,29 @@ export default function Navbar() {
               }}
             >
               Services{" "}
+              <div className="dropDownIcon">
               <ExpandMoreIcon
                 sx={{ color: "currentcolor", transform: "translateY(2px)" }}
                 fontSize="small"
               />
+              </div>
             </span>
-            <ul className="services__dropdown">
-              <li className="dropdown_items" ref={service1}>
-                <Link to="services/drivinglicense">Driving License</Link>
+
+            <ul className={`services__dropdown ${dark? 'dark' : 'light'}`}>
+              <li className="dropdown_items">
+                <NavLink to="services/drivinglicense" style={dropDownItemStyle}>Driving License</NavLink>
               </li>
-              <li className="dropdown_items" ref={service2}>
-                <Link to="services/passport">Passport Service</Link>
+              <li className="dropdown_items">
+                <NavLink to="services/passport" style={dropDownItemStyle}>Passport Service</NavLink>
               </li>
-              <li className="dropdown_items" ref={service3}>
-                <Link to="services/tuitionclasses">Tution Classes</Link>
+              <li className="dropdown_items">
+                <NavLink to="services/tuitionclasses" style={dropDownItemStyle}>Tution Classes</NavLink>
               </li>
-              <li className="dropdown_items" ref={service4}>
-                <Link to="services/onlineforms">Online Forms</Link>
+              <li className="dropdown_items">
+                <NavLink to="services/onlineforms" style={dropDownItemStyle}>Online Forms</NavLink>
               </li>
               <li className="dropdown_items" ref={moreBtnRef}>
-                <Link to="/services">More</Link>
+                <NavLink to="/services">More</NavLink>
               </li>
             </ul>
           </li>

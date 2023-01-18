@@ -24,6 +24,8 @@ function App() {
   const { dark } = useContext(ThemeContext);
   let currLocation = useLocation();
 
+
+
   useEffect(() => {
     let paragraph = document.getElementsByTagName("p");
     let constantPara = [
@@ -44,8 +46,9 @@ function App() {
     );
     let headings = Array.from(document.getElementsByTagName("h3"));
     let headingArray = [...bigHeadings, ...headings];
+    const constHeading = ['hero-heading', 'logo-text']
     headingArray.forEach((heading) => {
-      if (heading.classList.contains("logo-text")) return;
+      if (constHeading.some((className)=>heading.classList.contains(className))) return;
       heading.classList.add(dark ? "dark" : "light");
       heading.classList.remove(dark ? "light" : "dark");
     });
@@ -55,6 +58,30 @@ function App() {
   useEffect(() => {
     document.querySelector(".nav__links").classList.remove("active");
     window.scrollTo(0, 0);
+    
+    switch(currLocation.pathname){
+      case '/': 
+      document.title = 'SASA Group - Welcome To Our Official page | Home'
+        break;
+      case '/about':
+        document.title = 'SASA Group - About Us'
+        break;
+
+      case '/latestposts':
+        document.title = 'SASA Group - Latest Post'
+        break;
+
+      case '/contact':
+        document.title = 'SASA Group - Contact Us'
+        break;
+
+      case '/company':
+        document.title = 'SASA Group - Company'
+        break;
+
+      default: 
+        document.title = 'SASA Group - Services'
+    }
   }, [currLocation]);
 
   document.getElementById("root").style.backgroundColor = dark

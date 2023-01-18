@@ -39,7 +39,7 @@ const Tags = () => {
     alignItems: "center",
     flexWrap: "wrap",
     background: dark
-      ? "linear-gradient(to bottom right, rgb(52 58 70 / .9), rgb(52 58 70 / .8))"
+      ? "transparent"
       : "linear-gradient(to right, var(--purple), var(--primary-color))",
     marginTop: 0,
   };

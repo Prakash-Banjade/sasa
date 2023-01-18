@@ -1,10 +1,8 @@
-import React, { useContext } from "react";
-import { NavBackContext } from "../context/context";
+import React from "react";
 import ConstructionIcon from "@mui/icons-material/Construction";
 import { Link, useNavigate } from "react-router-dom";
 
 const DevelopmentPage = () => {
-  let navBack = useContext(NavBackContext);
   let navigate = useNavigate();
 
   const handleBack = () => {
@@ -12,7 +10,6 @@ const DevelopmentPage = () => {
   };
   return (
     <>
-      <div className="navback" style={{ background: navBack.navBack }}></div>
 
       <div className="ofsPage-container" style={{ padding: "3rem" }}>
         <ConstructionIcon sx={{ fontSize: "15rem", color: "var(--purple)" }} />

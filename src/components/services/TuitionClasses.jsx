@@ -1,5 +1,4 @@
 import React, { useContext, useState, useRef } from "react";
-import { NavBackContext } from "../../context/context";
 import "../css/TuitionClasses.scss";
 import cardImg1 from "../../assets/images/classes_category_1.jpg";
 import cardImg2 from "../../assets/images/classes_category_2.jpg";
@@ -30,8 +29,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Card = (props) => {
+  const {dark} = useContext(ThemeContext)
+
   return (
-    <div className="card dflex dflex-column">
+    <div className={`card dflex dflex-column ${dark? 'dark' : 'light'}`}>
       <figure>
         <img src={props.img} alt="a random online class " />
       </figure>
@@ -172,9 +173,11 @@ const Carousel = () => {
   ];
 
   const CarouselCard = (props) => {
+    const {dark} = useContext(ThemeContext)
+
     AOS.init();
     return (
-      <div className="carousel-card dflex-center dflex-column gap-1 ">
+      <div className={`carousel-card dflex-center dflex-column gap-1 ${dark? 'dark' : 'light'}`} >
         <img src={props.img} alt="famous teacher" />
         <h3 className="text-center">{props.name}</h3>
         <p className="dflex-center gap-1" style={{ fontWeight: "bold" }}>
@@ -240,13 +243,14 @@ const Carousel = () => {
 };
 
 const TuitionClasses = () => {
-  const navback = useContext(NavBackContext);
+  const {dark} = useContext(ThemeContext)
+
+
 
   return (
     <div className="tuitionClasses-container">
-      <div className="navBack" style={{ background: navback.navBack }}></div>
 
-      <section className="tuition_herosection">
+      <section className={`tuition_herosection ${dark? 'dark' : 'light'}`}>
         <h2>Want The Best Tuition Classes?</h2>
         <h3>You have come to the right place</h3>
         <button onClick={()=>{
@@ -256,7 +260,7 @@ const TuitionClasses = () => {
         </button>
       </section>
 
-      <div className="small-box dflex dflex-column gap-2">
+      <div className={`small-box dflex dflex-column gap-2 ${dark? 'dark' : 'light'}`}>
         <h3 className="text-center">Best Tutors For Online/Offline Tuitions</h3>
         <ol className="dflex wrap gap-1">
           <li className="dflex gap-1">

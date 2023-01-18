@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { Link } from 'react-router-dom'
-import { NavBackContext } from "../../context/context";
 import "../css/DrivingLicense.scss";
 import heroImg from "../../assets/images/drivingLicense.png";
 import { ThemeContext } from "../../context/context";
@@ -9,15 +8,19 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const HeroSection = (props) =>{
+  
+  const {dark} = useContext(ThemeContext)
+  const headingStyle = {color: dark? '#4e5599' : 'var(--heading-color)'}
+
   return(
     <div className="service-herosection dflex wrap gap-3">
     <div className="left-content dflex dflex-column gap-2 ">
-      <h2 className="hero-heading">{props.heroTitle}</h2>
+      <h2 className="hero-heading" style={headingStyle}>{props.heroTitle}</h2>
       <p>{props.heroDescription}</p>
       <p className="tags">
-        <span>Easier! </span>
-        <span>Faster! </span>
-        <span>Secure!</span>
+        <span style={headingStyle}>Easier! </span>
+        <span style={headingStyle}>Faster! </span>
+        <span style={headingStyle}>Secure!</span>
       </p>
 
       <button><a href="tel:+9779800784971">Call Now</a></button>
@@ -34,11 +37,9 @@ const DrivingLicense = () => {
   
   const {dark} = useContext(ThemeContext)
   AOS.init();
-  const { navBack } = useContext(NavBackContext);
   return (
     <>
       <div className="dl_container">
-        <div className="nav-back" style={{ background: navBack }}></div>
         <HeroSection
           heroTitle="Grab Your Driving License With SASA"
           heroDescription={`"A driving license is the key to freedom and independence. Let us help

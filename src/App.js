@@ -6,7 +6,7 @@ import HomePage from "./components/routes/HomePage";
 import AboutUsPage from "./components/routes/AboutUsPage";
 import { useContext, useEffect } from "react";
 import LatestPosts from "./components/routes/LatestPosts";
-// import AlertMessage from "./components/Alert";
+import AlertMessage from "./components/Alert";
 import Contact from "./components/routes/Contact";
 import DrivingLicense from "./components/services/DrivingLicense";
 import ServicesPage from "./components/routes/ServicesPage";
@@ -27,13 +27,19 @@ function App() {
 
 
   useEffect(() => {
+
+    // changing theme of p, h2, h3 when dark and location changes
     let paragraph = document.getElementsByTagName("p");
+
+    // exceptions
     let constantPara = [
       "customer-name",
       "hero-content",
       "message",
       "feature-desc",
     ];
+
+    // changing the theme of p
     Array.from(paragraph).forEach((p) => {
       if (constantPara.some((className) => p.classList.contains(className)))
         return;
@@ -41,18 +47,26 @@ function App() {
       p.classList.remove(dark ? "light" : "dark");
     });
 
+    // h2, h3
     let bigHeadings = Array.from(
       document.getElementsByClassName("big-heading")
     );
     let headings = Array.from(document.getElementsByTagName("h3"));
     let headingArray = [...bigHeadings, ...headings];
-    const constHeading = ['hero-heading', 'logo-text']
+
+    // exceptions
+    const constHeading = ['hero-heading', 'logo-text', 'hero-heading-main']
+
+    // changing the theme
     headingArray.forEach((heading) => {
       if (constHeading.some((className)=>heading.classList.contains(className))) return;
       heading.classList.add(dark ? "dark" : "light");
       heading.classList.remove(dark ? "light" : "dark");
     });
+
+    // removing the active state of hamburger menu 
     document.getElementById("bar").classList.remove("toggled");
+    document.querySelector(".nav__links").classList.remove("active");
   }, [dark, currLocation]);
 
   useEffect(() => {
@@ -90,7 +104,7 @@ function App() {
 
   return (
     <>
-      {/* <AlertMessage /> */}
+      <AlertMessage />
       <Navbar />
 
       <Routes>

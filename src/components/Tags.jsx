@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useMemo } from "react";
 import { ThemeContext } from "../context/context";
 
 const tagTitle = [
@@ -9,12 +9,11 @@ const tagTitle = [
 ];
 
 const tagStyle = {
-  padding: "2rem",
   flex: "1 1 300px",
-  textAlign: "center",
+  width: '100%'
 };
 
-const tabTextStyle = {
+const tagTextStyle = {
   fontFamily: "var(--primary-font)",
   color: "white",
   fontSize: "1rem",
@@ -22,8 +21,8 @@ const tabTextStyle = {
 
 const Tag = (props) => {
   return (
-    <div className="tag" style={tagStyle}>
-      <li className="tag-list" style={tabTextStyle}>
+    <div className="tag dflex-center" style={tagStyle}>
+      <li className="tag-list" style={tagTextStyle}>
         {props.tagTitle}
       </li>
     </div>
@@ -33,16 +32,20 @@ const Tag = (props) => {
 const Tags = () => {
   const { dark } = useContext(ThemeContext);
 
-  const tagContainerStyles = {
-    padding: 0,
-    display: "flex",
-    alignItems: "center",
-    flexWrap: "wrap",
-    background: dark
-      ? "transparent"
-      : "linear-gradient(to right, var(--purple), var(--primary-color))",
-    marginTop: 0,
-  };
+  const tagContainerStyles = useMemo(() => {
+    return {
+      padding: "1rem",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: "1rem",
+      flexWrap: "wrap",
+      background: dark
+        ? "transparent"
+        : "linear-gradient(to right, var(--purple), var(--primary-color))",
+      marginTop: '0 !important',
+    };
+  }, [dark]);
 
   return (
     <div style={tagContainerStyles} className="tags-container container">

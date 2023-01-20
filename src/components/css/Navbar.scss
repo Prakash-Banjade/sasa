@@ -27,6 +27,10 @@
     display: flex;
     align-items: center;
 
+    &.thumb{
+      margin-left: 10px;
+    }
+
     &.nav-tab a {
       position: relative;
       display: grid;
@@ -115,13 +119,13 @@
 
       &.light {
         background-color: white;
-        border: 1px solid #ebecf0;
+        border: 1px solid var(--line-color-light);
         color: var(--text-color);
       }
 
       &.dark {
         background-color: var(--primary-dark);
-        border: 1px solid #343a46;
+        border: 1px solid var(--line-color-dark);
         color: var(--white);
       }
 
@@ -168,8 +172,8 @@ li.menuToggle {
   }
 
   & .bar {
-    height: 3px;
-    width: 2.1rem;
+    height: 2px;
+    width: 1.7rem;
     position: relative;
     cursor: pointer;
     border-radius: 5px;
@@ -191,11 +195,11 @@ li.menuToggle {
     }
 
     &::before {
-      top: -300%;
+      top: -350%;
     }
 
     &::after {
-      bottom: -300%;
+      bottom: -350%;
     }
 
     &.toggled {

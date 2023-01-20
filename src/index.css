@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;900&family=Roboto:ital,wght@0,300;0,400;0,500;1,300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
   margin: 0;
@@ -9,7 +10,8 @@
 #root {
   --text-font: "Poppins", sans-serif;
   --primary-font: "Roboto", sans-serif;
-  --heading-font: "Anton", sans-serif;
+  /* --heading-font: "Anton", sans-serif; */
+  --heading-font:  'Sofia Sans', sans-serif;
   --primary-color: rgb(30, 144, 255);
   --text-color: #2b2b2b;
   --logo-text-color: rgb(90, 143, 197);
@@ -31,6 +33,11 @@
 
   --bg-color: rgb(20, 20, 20);
   --card-color: rgb(23, 23, 23);
+
+  --line-color-dark: #343a46;
+  --line-color-light: #ebecf0;
+
+  --shadow-width: 250px;
 }
 
 html {

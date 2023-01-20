@@ -37,6 +37,21 @@ const Features = () => {
     };
   }, []);
 
+  useEffect(() => {
+    window.onscroll = () => {
+      if (document.getElementById("cards") !== null) {
+        if (
+          window.pageYOffset >
+          document.getElementById("cards").offsetTop - 380
+        ) {
+          document.getElementById("cards").classList.add("lighten");
+        } else {
+          document.getElementById("cards").classList.remove("lighten");
+        }
+      }
+    };
+  }, []);
+
   const { dark } = useContext(ThemeContext);
   AOS.init();
   const iconStyle = {
@@ -51,15 +66,15 @@ const Features = () => {
       </h2>
       <div className="features-cards dflex wrap">
         <div id="cards">
-          <div class="card">
-            <div class={`card-content ${dark? 'dark' : 'light'}`}>
-              <div class="card-image">
+          <div className="card">
+            <div className={`card-content ${dark ? "dark" : "light"}`}>
+              <div className="card-image">
                 <SentimentSatisfiedAltOutlinedIcon sx={iconStyle} />
               </div>
-              <div class="card-info-wrapper">
-                <div class="card-info">
-                  {/* <i class="fa-duotone fa-apartment"></i> */}
-                  <div class="card-info-title">
+              <div className="card-info-wrapper">
+                <div className="card-info">
+                  {/* <i className="fa-duotone fa-apartment"></i> */}
+                  <div className="card-info-title">
                     <h3 className="text-center">{headings[0]}</h3>
                     <p className="text-center">{featuresDesc[headings[0]]}</p>
                   </div>
@@ -68,15 +83,15 @@ const Features = () => {
             </div>
           </div>
 
-          <div class="card">
-            <div class={`card-content ${dark? 'dark' : 'light'}`}>
-              <div class="card-image">
+          <div className="card">
+            <div className={`card-content ${dark ? "dark" : "light"}`}>
+              <div className="card-image">
                 <EmojiObjectsOutlinedIcon sx={iconStyle} />
               </div>
-              <div class="card-info-wrapper">
-                <div class="card-info">
-                  {/* <i class="fa-duotone fa-apartment"></i> */}
-                  <div class="card-info-title">
+              <div className="card-info-wrapper">
+                <div className="card-info">
+                  {/* <i className="fa-duotone fa-apartment"></i> */}
+                  <div className="card-info-title">
                     <h3 className="text-center">{headings[1]}</h3>
                     <p className="text-center">{featuresDesc[headings[1]]}</p>
                   </div>
@@ -85,15 +100,15 @@ const Features = () => {
             </div>
           </div>
 
-          <div class="card">
-            <div class={`card-content ${dark? 'dark' : 'light'}`}>
-              <div class="card-image">
+          <div className="card">
+            <div className={`card-content ${dark ? "dark" : "light"}`}>
+              <div className="card-image">
                 <Groups2OutlinedIcon sx={iconStyle} />
               </div>
-              <div class="card-info-wrapper">
-                <div class="card-info">
-                  {/* <i class="fa-duotone fa-apartment"></i> */}
-                  <div class="card-info-title">
+              <div className="card-info-wrapper">
+                <div className="card-info">
+                  {/* <i className="fa-duotone fa-apartment"></i> */}
+                  <div className="card-info-title">
                     <h3 className="text-center">{headings[2]}</h3>
                     <p className="text-center">{featuresDesc[headings[2]]}</p>
                   </div>
@@ -102,15 +117,15 @@ const Features = () => {
             </div>
           </div>
 
-          <div class="card">
-            <div class={`card-content ${dark? 'dark' : 'light'}`}>
-              <div class="card-image">
+          <div className="card">
+            <div className={`card-content ${dark ? "dark" : "light"}`}>
+              <div className="card-image">
                 <RecommendOutlinedIcon sx={iconStyle} />
               </div>
-              <div class="card-info-wrapper">
-                <div class="card-info">
-                  {/* <i class="fa-duotone fa-apartment"></i> */}
-                  <div class="card-info-title">
+              <div className="card-info-wrapper">
+                <div className="card-info">
+                  {/* <i className="fa-duotone fa-apartment"></i> */}
+                  <div className="card-info-title">
                     <h3 className="text-center">{headings[3]}</h3>
                     <p className="text-center">{featuresDesc[headings[3]]}</p>
                   </div>
@@ -118,16 +133,16 @@ const Features = () => {
               </div>
             </div>
           </div>
-          
-          <div class="card">
-            <div class={`card-content ${dark? 'dark' : 'light'}`}>
-              <div class="card-image">
+
+          <div className="card">
+            <div className={`card-content ${dark ? "dark" : "light"}`}>
+              <div className="card-image">
                 <AssuredWorkloadOutlinedIcon sx={iconStyle} />
               </div>
-              <div class="card-info-wrapper">
-                <div class="card-info">
-                  {/* <i class="fa-duotone fa-apartment"></i> */}
-                  <div class="card-info-title">
+              <div className="card-info-wrapper">
+                <div className="card-info">
+                  {/* <i className="fa-duotone fa-apartment"></i> */}
+                  <div className="card-info-title">
                     <h3 className="text-center">{headings[4]}</h3>
                     <p className="text-center">{featuresDesc[headings[4]]}</p>
                   </div>

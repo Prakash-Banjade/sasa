@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Typography, Button } from "@mui/material";
+import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
@@ -9,69 +9,53 @@ import "./css/HeroSection.scss";
 import { ThemeContext } from "../context/context";
 
 export default function HeroSection() {
-  const {dark} = useContext(ThemeContext)
+  const { dark } = useContext(ThemeContext);
 
   return (
     <>
-      <div className={`hero-container dflex wrap gap-2 ${dark? 'dark' : 'light'}`}>
-        <div className="left-content dflex dflex-column">
-          <div className="hero-content-heading dflex wrap">
-            <Typography
-              variant="h2"
-              sx={{
-                fontFamily: "var(--heading-font)",
-                color: "var(--primary-color)",
-                paddingTop: "20px",
-                textShadow: "2px 2px 10px rgb(0 0 0 / .5)",
-              }}
-            >
-              SASA
-            </Typography>
-            <Typography
-              className="hero_heading_secondary"
-              variant="h2"
-              sx={{
-                fontFamily: "var(--heading-font)",
-                color: "var(--white)",
-                textShadow: "2px 2px 10px rgb(0 0 0 / .5)",
-              }}
-            >
-              Is Your Need
-            </Typography>
-          </div>
+      <div
+        className={`hero-container dflex-center wrap dflex-column ${
+          dark ? "dark" : "light"
+        }`}
+      >
+        <div className="hero-content-heading">
+          <h2 className={`hero-heading-main ${dark ? "dark" : "light"}`}>
+            Unlock your potential with SASA Group
+          </h2>
+        </div>
 
-          <div className="hero-content-paragraph">
-            <p
-              style={{
-                maxWidth: "800px",
-                margin: "20px auto",
-                lineHeight: "2rem",
-                fontWeight: 400,
-                color: 'var(--white)'
-              }}
-
-              className="hero-content"
-            >
-              Driving लाइसेन्स देखि लिएर राहदानी (passport) सम्म बनाउन
-              चाहनुहुन्छ भने SASA लाई सम्झनुहोस। हामी उचित मूल्यमा विभिन्न
-              सेवाहरू प्रदान गर्दछौं र कुनै पनि वित्तीय समस्याहरू समाधान गर्न
-              मद्दत गर्न सधैं इच्छुक छौं। हामी अध्ययन वा कामको लागि विदेश
-              भ्रमणहरूमा पनि राम्रो सुझाव दिन्छौं।
-            </p>
-          </div>
-
-          <div
-            className="hero-content-button"
+        <div className="hero-content-paragraph">
+          <p
             style={{
-              display: "flex",
-              gap: "10px",
-              marginTop: "50px",
+              maxWidth: "800px",
+              margin: "20px auto",
+              lineHeight: "2rem",
+              fontWeight: 400,
+              color: "var(--white)",
+              padding: "0 20px",
             }}
+            className="hero-content text-center"
           >
+            "Empowering individuals and communities through a wide range of
+            services, SASA Group is dedicated to helping you navigate the
+            complexities of modern life."
+          </p>
+        </div>
+
+        <div className="dflex-center dflex-column gap-1">
+          <div className="hero-content-button dflex gap-1">
             <Button
               className="hero-button"
               variant="contained"
-              sx={{ boxShadow: "0 4px 10px rgb(0 0 0 / .2)", padding: '10px 18px' }}
+              sx={{
+                boxShadow: "0 4px 10px rgb(0 0 0 / .2)",
+                padding: "10px 18px",
+                borderRadius: "25px",
+
+                "&:hover": {
+                  boxShadow: "2px 2px 15px 5px rgb(30 144 255 / .3)",
+                },
+              }}
             >
               <Link to="/about">Learn More</Link>
             </Button>
@@ -81,8 +65,8 @@ export default function HeroSection() {
               sx={{
                 boxShadow: "0 4px 10px rgb(0 0 0 / .2)",
                 backgroundColor: "white",
-                padding: '10px 18px',
-                "&:hover": { backgroundColor: "white", opacity: ".9" },
+                padding: "10px 18px",
+                borderRadius: "25px",
               }}
             >
               <Link to="/contact">Contact us</Link>
@@ -90,11 +74,9 @@ export default function HeroSection() {
           </div>
 
           <div
-            className="social-media"
+            className="social-media dflex"
             style={{
-              display: "flex",
               gap: "10px",
-              marginTop: "20px",
             }}
           >
             <a
@@ -137,10 +119,6 @@ export default function HeroSection() {
               />
             </a>
           </div>
-        </div>
-
-        <div className="right-content grid-center">
-          <div className="stack" style={{backgroundColor: dark? 'var(--primary-dark-light)' : 'var(--purple)'}}></div>
         </div>
       </div>
     </>

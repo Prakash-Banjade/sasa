@@ -17,6 +17,7 @@ export default function Navbar() {
   const moreBtnRef = useRef();
 
 
+
   let location = useLocation();
 
   useEffect(() => {
@@ -164,7 +165,7 @@ export default function Navbar() {
           <li className="nav_link contact">
             <NavLink to="/contact">Contact</NavLink>
           </li>
-          <li className="nav_link">
+          <li className="nav_link thumb">
             <Thumb />
           </li>
         </ul>

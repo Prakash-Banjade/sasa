@@ -14,7 +14,7 @@ const Footer = () => {
       className="footer container dflex-center dflex-column"
       style={{ gap: "2rem", marginBottom: 0 }}
     >
-    <hr style={{background: dark? '#343a46' : '#ebecf0'}} />
+    <hr style={{background: dark? 'var(--line-color-dark)' : 'var(--line-color-light)'}} />
       <NavLink to="/" className={() => "dflex dflex-center"}>
         <img
           src={logo}

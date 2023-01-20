@@ -1,6 +1,5 @@
 .why_sasa-container {
   gap: 5rem;
-  // background-color: #f2f2f2;
 
   & > * {
     flex: 1 1 400px;
@@ -30,7 +29,6 @@
       gap: 10px;
 
       & p {
-        // font-weight: 400;
 
         & span {
           font-weight: 500;
@@ -62,7 +60,6 @@
   }
 
   & .right-content {
-    // align-items: center;
     padding-left: 5rem;
     & .title {
       font-family: var(--primary-font);
@@ -98,10 +95,11 @@
         position: absolute;
         width: .5px;
         height: 90%;
-        left: 1.5rem;
+        // left: 1.6rem;
+        left: calc(10px + .75rem + 3px);
         top: 50%;
         transform: translate(-50%, -50%);
-        background-color: #ccc;
+        background-color: #343a46;
       }
     }
 

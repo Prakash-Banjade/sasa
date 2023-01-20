@@ -11,10 +11,10 @@ const WhySASA = () => {
   const {dark} = useContext(ThemeContext)
   return (
     <div className="why_sasa-container container dflex wrap">
-      <div className="left-content" data-aos="zoom-in-up" >
-        <h2 className="why-ques">Why SASA ?</h2>
+      <div className="left-content" >
+        <h2 className="why-ques" data-aos="zoom-in-up">Why SASA ?</h2>
 
-        <div className="why-ans dflex">
+        <div className="why-ans dflex" data-aos="zoom-in">
           <p>
             We provide a <span>comprehensive range of services</span> that
             simplify the process of obtaining the necessary documents and

@@ -47,10 +47,6 @@
   .service-card button{
     margin-top: 0 !important;
   }
-
-  .services-card-container{
-    gap: 2rem !important;
-  }
   .about-container .left-content{
     justify-content: center !important;
     align-items: center !important;
@@ -68,11 +64,11 @@
 
   .nav {
     padding: 0px;
-    position: relative;
     z-index: 11;
   }
-  ul:not(.services__dropdown, .tags-ans) {
+  ul.menuDropDown {
     width: 100%;
+    height: calc(100vh - 50px);
     position: absolute;
     right: 0;
     top: 100%;
@@ -82,15 +78,18 @@
     justify-content: flex-start;
     align-items: flex-start;
     z-index: 10;
-    border-bottom: 1px solid var(--light-gray);
     box-shadow: 0 10px 15px rgb(0 0 0 / 0.1);
-    gap: 1rem;
-    display: none;
+    opacity: 0;
+    transform: scaleY(0);
+    translate: 0 -10px;
+    transform-origin: top;
+    transition: opacity 150ms linear, translate 150ms linear;
   }
-
-  ul.active:not(.services__dropdown) {
-    display: flex;
-    animation: menuDrop 150ms ease-in-out;
+  
+  ul.menuDropDown.active {
+    opacity: 1;
+    transform: scaleY(1);
+    translate: 0 0;
   }
 
   ul.menuDropDown.dark{
@@ -99,6 +98,13 @@
 
   ul.menuDropDown.light{
     background-color: #ccc;
+  }
+
+  .nav__links li.nav_link{
+    height: auto;
+    width: 100%;
+    border-bottom: 1px solid var(--line-color-dark);
+    padding: .8rem 0;
   }
 
   .ofsPage-container{
@@ -145,9 +151,19 @@
     padding: 10px !important;
   }
 
+  .hero-container{
+    padding-top: 80px;
+  }
+
+  h2.hero-heading-main{
+    font-size: 3.5rem;
+  }
 }
 
 @media screen and (max-width: 500px) {
+  .hero-container .hero-content-heading h2.hero-heading-main.top-heading{
+    display: none;
+  }
   li.menuToggle {
     right: 0;
   }

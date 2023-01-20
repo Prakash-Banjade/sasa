@@ -26,9 +26,16 @@ const ServicesFront = () => {
 
   const links=['services/drivinglicense', 'services/passport', 'services/tuitionclasses', 'services/computerclasses', 'services/webdesigning', 'services/sharemarket']
 
+
   return (
     <div className="services-container container">
-      <h2 className="heading">What We Serve</h2>
+    <div className="shadow_container dflex-center">
+      <div className="shadows dfex dflex-column">
+        <div className="shadow-dark shadow"></div>
+        <div className="shadow-light shadow"></div>
+      </div>
+    </div>
+      <h2 className="heading text-center">What We Serve</h2>
 
       <div className="services-card-container">
         {Array.from(Object.keys(servicesInfo)).map((title, index) => {

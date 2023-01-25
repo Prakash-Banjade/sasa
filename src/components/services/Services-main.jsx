@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import ServiceCard from "./Service-card";
 import "../css/Services.scss";
+import { ThemeContext } from "../../context/context";
 
 const ServicesFront = () => {
   const servicesInfo = {
@@ -24,18 +25,28 @@ const ServicesFront = () => {
       "Our Share Market Suggestion Service provides personalized advice on investing in the stock market. Our team of experts analyzes the market data and makes recommendations on which stocks to buy and sell, as well as when to do so. We offer a tailored approach to ensure that you get the most out of your investment. Our services also provide timely updates and insights into the markets to keep you informed of the latest trends and developments. With our advice, you can maximize your profits and minimize your risks.",
   };
 
-  const links=['services/drivinglicense', 'services/passport', 'services/tuitionclasses', 'services/computerclasses', 'services/webdesigning', 'services/sharemarket']
+  const links = [
+    "services/drivinglicense",
+    "services/passport",
+    "services/tuitionclasses",
+    "services/computerclasses",
+    "services/webdesigning",
+    "services/sharemarket",
+  ];
 
+  const { dark } = useContext(ThemeContext);
 
   return (
     <div className="services-container container">
-    <div className="shadow_container dflex-center">
-      <div className="shadows dfex dflex-column">
-        <div className="shadow-dark shadow"></div>
-        <div className="shadow-light shadow"></div>
+      {/* <h2 className={`heading text-center ${dark ? "dark" : "light"}`}>
+        <div className="shadow"></div>
+        <div className="headingTitle">What We Serve</div>
+      </h2> */}
+
+      <div className="heading-container grid-center">
+        <div className="shadow"></div>
+        <h2 className={`heading text-center ${dark ? "dark" : "light"}`} id="heading1">What We Serve</h2>
       </div>
-    </div>
-      <h2 className="heading text-center">What We Serve</h2>
 
       <div className="services-card-container">
         {Array.from(Object.keys(servicesInfo)).map((title, index) => {
@@ -51,7 +62,7 @@ const ServicesFront = () => {
       </div>
 
       <div className="viewAllBtn dflex">
-        <button style={{ marginLeft: "auto", marginTop: '1rem' }}>
+        <button style={{ marginLeft: "auto", marginTop: "1rem" }}>
           <Link to="services">View all</Link>
         </button>
       </div>

@@ -29,9 +29,6 @@
     padding: 1.5rem !important;
   }
 
-  .heroSection{
-    padding: 70px 10px !important;
-  }
   .about-container{
     display: block !important;
   }
@@ -130,7 +127,7 @@
     }
   }
 
-  li.menuToggle {
+  button.menuToggle {
     display: block !important;
     cursor: pointer;
     position: absolute;
@@ -164,7 +161,7 @@
   .hero-container .hero-content-heading h2.hero-heading-main.top-heading{
     display: none;
   }
-  li.menuToggle {
+  button.menuToggle {
     right: 0;
   }
 }
@@ -183,6 +180,10 @@
 
   .big-font{
     font-size: 3rem !important;
+  }
+
+  .heroSection article h2, .hero-container .hero-content-heading h2.hero-heading-main{
+    font-size: 3.5rem !important;
   }
 }
 

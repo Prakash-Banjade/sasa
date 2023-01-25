@@ -24,6 +24,29 @@ function App() {
   const { dark } = useContext(ThemeContext);
   let currLocation = useLocation();
 
+  // glowing the headings on scroll
+  useEffect(()=>{
+    let headings = document.querySelectorAll('.heading')
+    let shadow = document.querySelectorAll('.shadow')
+
+    if (headings !== null){
+      window.onscroll = ()=>{
+        Array.from(headings).forEach((heading, ind) =>{
+          let offset = heading.getBoundingClientRect()
+          if (window.pageYOffset > (offset.top + 1000)){
+            heading.classList.add('lighten')
+            shadow[ind].classList.add('lighten')
+          }else{
+            heading.classList.remove('lighten')
+            shadow[ind].classList.remove('lighten')
+          }
+        })
+      }
+    }
+
+    
+    
+  }, [])
 
 
   useEffect(() => {

@@ -77,15 +77,15 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <li className="menuToggle" onClick={toggleMenu}>
+        <button className="menuToggle" onClick={toggleMenu}>
           <Tooltip title="Menu" arrow>
             <div
-              className="bar"
+              className="bar grid-center"
               id="bar"
               style={{ backgroundColor: dark? 'white' : '#404756' }}
             ></div>
           </Tooltip>
-        </li>
+        </button>
 
         <ul className={`nav__links menuDropDown ${dark ? 'dark' : 'light'}`} >
           <li className="nav_link nav-tab active">

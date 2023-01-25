@@ -1,6 +1,7 @@
 .heroSection{
     min-height: 500px;
       margin-top: -50px;
+      padding: 90px 20px;
 
       &.light {
         background: linear-gradient(
@@ -23,7 +24,7 @@
       & article{
         & h2{
             font-family: var(--primary-font);
-            font-size: 4rem;
+            font-size: 4.5rem;
             color: white;
             font-weight: 600;
         }

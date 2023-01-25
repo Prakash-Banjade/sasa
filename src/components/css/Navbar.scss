@@ -162,14 +162,14 @@
   }
 }
 
-li.menuToggle {
+button.menuToggle {
   cursor: pointer;
   display: none;
+  background-color: transparent;
+  border: none;
   padding: 10px;
 
-  &::selection {
-    background-color: transparent;
-  }
+
 
   & .bar {
     height: 2px;
@@ -177,10 +177,6 @@ li.menuToggle {
     position: relative;
     cursor: pointer;
     border-radius: 5px;
-
-    &::selection {
-      background-color: transparent;
-    }
 
     &::before,
     &::after {

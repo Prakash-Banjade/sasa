@@ -18,7 +18,7 @@
   --service-card-color: #f8faff;
   --heading-color: #05364d;
   --light-gray: #808080;
-  --purple: #9c27b0;
+  --purple: rgb(156, 39, 176);
   --white: hsl(217deg 21% 85%);
   --primary-background-dark1: #283541;
   --primary-background-dark2: #343a46;
@@ -85,22 +85,53 @@ ul:not(.services__dropdown) {
 }
 
 h2.heading {
-  margin-bottom: 57px;
   font-family: var(--primary-font);
-  color: var(--purple);
-  font-size: 2.5rem;
-  position: relative;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text !important;
+  font-size: 3.5rem;
 }
 
-h2.heading::before {
-  content: "";
+h2.heading.dark{
+  background: linear-gradient(to bottom right, #ccc, #999);
+  transform: translateY(2.8rem);
+  transition: transform 250ms ease;
+  
+}
+
+h2.heading.dark.lighten{
+  background: linear-gradient(to bottom right, white, #aaa);
+  text-shadow: 0 2px 10px rgb(30 144 255 / .3);
+  transform: translateY(0);
+}
+
+.heading-container{
+  position: relative;
+  margin-bottom: 4rem;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.heading-container div.shadow{
   position: absolute;
-  height: 10px;
-  width: 3ch;
-  background-color: var(--purple);
-  opacity: 0.5;
-  top: 100%;
-  border-radius: 10px;
+  width: 60%;
+  top: -80%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgb(255 255 255 / .05);
+  filter: blur(30px);
+  transform: scaleX(.5);
+  transition: transform 250ms ease-in-out;
+}
+
+.heading-container div.shadow.lighten{
+  background-color: rgb(255 255 255 / .2);
+  transform: scaleX(1);
+  top: -50%;
+}
+
+h2.heading.light{
+  background: linear-gradient(to bottom right, rgb(156 39 176), rgb(156 39 76 / .5));
 }
 
 h2.big-heading{

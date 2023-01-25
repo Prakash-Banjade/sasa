@@ -5,7 +5,7 @@ import { ThemeContext } from "../context/context";
 const HeroSectionTemplate = (props) => {
   const {dark} = useContext(ThemeContext)
   return (
-    <div className={`heroSection container grid-center ${dark? 'dark' : 'light'}`}>
+    <div className={`heroSection grid-center ${dark? 'dark' : 'light'}`}>
     <article className="dflex-center dflex-column gap-2">
       <h2 className="text-center">{props.title}</h2>
       <p className="text-center hero-content">

@@ -60,10 +60,11 @@ const Features = () => {
     margin: "auto",
   };
   return (
-    <div className="features-container container dflex dflex-column gap-2 dflex-wrap">
-      <h2 className="heading" data-aos="fade-up">
-        Our Key Features
-      </h2>
+    <div className="features-container container dflex dflex-column dflex-wrap">
+     <div className="heading-container grid-center">
+        {/* <div className="shadow"></div> */}
+        <h2 className={`heading text-center ${dark ? "dark" : "light"}`}>Our Key Features</h2>
+      </div>
       <div className="features-cards dflex wrap">
         <div id="cards">
           <div className="card">
@@ -73,7 +74,6 @@ const Features = () => {
               </div>
               <div className="card-info-wrapper">
                 <div className="card-info">
-                  {/* <i className="fa-duotone fa-apartment"></i> */}
                   <div className="card-info-title">
                     <h3 className="text-center">{headings[0]}</h3>
                     <p className="text-center">{featuresDesc[headings[0]]}</p>

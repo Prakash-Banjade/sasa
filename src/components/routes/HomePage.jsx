@@ -15,6 +15,7 @@ const HomePage = () => {
     fontSize: "3.5rem",
     textShadow: "0 0 15px 2px rgb(30 144 255 / .7)",
     fontWeight: 600,
+    height: '300px',
     fontFamily: "var(--heading-font)",
     margin: "1em 0",
     padding: "1em 20px",
@@ -42,7 +43,7 @@ const HomePage = () => {
       <ServicesFront />
       <hr style={hrStyle} />
       <Features />
-      <div className="typeWriter" style={typeWriterStyle}>
+      <div className="typeWriter dflex center dflex-column gap-1" style={typeWriterStyle}>
         <span style={{ color: "var(--primary-color)" }}>SASA Group - </span>
 
         <Typed
